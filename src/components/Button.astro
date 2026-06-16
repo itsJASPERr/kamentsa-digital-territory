@@ -18,7 +18,7 @@ const {
 const baseClass = 'inline-flex items-center justify-center font-bold uppercase text-xs tracking-wider transition-all cursor-pointer';
 const variantClasses: Record<string, string> = {
   primary: 'bg-sangre-viva text-fibra-natural border-2 border-padre-sol px-4 py-2 shadow-[4px_4px_0_#00d2d3] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#f39c12] hover:bg-agua-pura hover:text-tierra-madre',
-  secondary: 'bg-padre-sol text-tierra-madre border-2 border-sangre-viva px-4 py-2 shadow-[4px_4px_0_#00d2d3] hover:bg-sangre-viva hover:text-fibra-natural hover:shadow-[4px_4px_0_#00d2d3]',
+  secondary: 'w-full bg-[#222] text-fibra-natural border border-transparent px-4 py-3 shadow-none uppercase hover:bg-sangre-viva hover:text-fibra-natural transition-colors',
 };
 
 const classes = `${baseClass} ${variantClasses[variant] || variantClasses.primary} ${customClass}`.trim();
