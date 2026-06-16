@@ -23,12 +23,12 @@ function getAlternateLanguageUrl(path: string, fromLang: string, toLang: string)
 }
 
 const alternateLang = currentLang === 'en' ? 'es' : 'en';
-const alternateLabel = alternateLang === 'en' ? 'English' : 'Español';
+const alternateLabel = alternateLang === 'en' ? 'EN' : 'ES';
 const alternateUrl = getAlternateLanguageUrl(currentPath, currentLang, alternateLang);
 ---
 
 <div class="language-switcher">
-  <Button href={alternateUrl} class="language-toggle">
+  <Button href={alternateUrl} class="language-toggle" variant="none">
     {alternateLabel}
   </Button>
 </div>
