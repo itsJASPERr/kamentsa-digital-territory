@@ -19,6 +19,13 @@ export const translations = {
       title: "Our Legacy",
       text: "For generations, our elders have painted and woven our history into sacred geometries. This digital canvas exists to extend that legacy across the globe, protecting our cultural house.",
     },
+
+    // Living Territory Section
+    territorio: {
+      title: "Our Living Territory",
+      body1: "For centuries, the Kamëntsá people have safeguarded the Sibundoy Valley, guided by the pillars of Time, Beauty, and Spirit. Our language, our rituals like Bëtsknaté, and our deep bond with the land define who we are.",
+      body2: "Today, we are connecting our ancestral traditions with the modern world. By sharing our stories and crafts, we invite you to walk alongside us to preserve a worldview rooted in harmony and mutual respect.",
+    },
     
     // Shop Section
     shop: {
@@ -84,6 +91,13 @@ export const translations = {
     legacy: {
       title: "Nuestro Legado",
       text: "Durante generaciones, nuestros abuelos han pintado y tejido nuestra historia en geometrías sagradas. Este lienzo digital existe para extender ese legado por todo el mundo, protegiendo nuestra casa cultural.",
+    },
+
+    // Living Territory Section
+    territorio: {
+      title: "Nuestro Territorio Vivo",
+      body1: "Durante siglos, el pueblo Kamëntsá ha salvaguardado el Valle de Sibundoy, guiado por los pilares del Tiempo, la Belleza y el Espíritu. Nuestro idioma, nuestros rituales como el Bëtsknaté y nuestra conexión con la tierra definen quiénes somos.",
+      body2: "Hoy, estamos conectando nuestras tradiciones ancestrales con el mundo moderno. Al compartir nuestras historias y artes, te invitamos a caminar junto a nosotros para preservar una cosmovisión arraigada en la armonía y el respeto mutuo.",
     },
     
     // Shop Section

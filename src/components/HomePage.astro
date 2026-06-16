@@ -2,6 +2,7 @@
 import { t, type Language } from '../i18n/utils';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Button from '../components/Button.astro';
+import TerritorioVivo from './TerritorioVivo.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -87,6 +88,8 @@ const langCode = t(lang, 'language.code');
         <div class="h-[380px] border-6 border-sangre-viva shadow-[8px_8px_0_#f39c12] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?auto=format&fit=crop&w=800&q=80')"></div>
       </div>
     </section>
+
+    <TerritorioVivo lang={lang} />
 
     <!-- ─── ARTISAN SHOP LOOP ─── -->
     <section id="shop" class="py-24 px-[10%] bg-[#111] relative faja-divider">
