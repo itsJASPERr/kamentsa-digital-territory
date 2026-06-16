@@ -61,7 +61,7 @@ const langCode = t(lang, 'language.code');
     </header>
 
     <!-- ─── HERO VIEW ─── -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-5 pt-16 bg-cover bg-center" style="background-image: linear-gradient(rgba(12, 12, 12, 0.85), rgba(22, 26, 24, 0.9)), url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?auto=format&fit=crop&w=1920&q=80')">
+    <section class="h-screen flex flex-col justify-center items-center text-center px-5 pt-16 bg-cover bg-center faja-divider relative" style="background-image: linear-gradient(rgba(12, 12, 12, 0.85), rgba(22, 26, 24, 0.9)), url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?auto=format&fit=crop&w=1920&q=80')">
       <h2 class="font-title text-5xl md:text-7xl uppercase tracking-wider text-fibra-natural drop-shadow-[4px_4px_0_#f6007b] mb-6">
         {t(lang, 'hero.title')}
       </h2>
@@ -77,19 +77,10 @@ const langCode = t(lang, 'language.code');
     </section>
 
     <!-- ─── NARRATIVE (History) ─── -->
-    <section id="story" class="py-24 px-[10%] relative faja-divider">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="font-title text-4xl text-agua-pura uppercase mb-6">{t(lang, 'legacy.title')}</h2>
-          <p class="text-gray-300 text-lg leading-relaxed">
-            {t(lang, 'legacy.text')}
-          </p>
-        </div>
-        <div class="h-[380px] border-6 border-sangre-viva shadow-[8px_8px_0_#f39c12] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?auto=format&fit=crop&w=800&q=80')"></div>
-      </div>
+    <section id="story" class="">
+        <TerritorioVivo lang={lang}/>
     </section>
 
-    <TerritorioVivo lang={lang} />
 
     <!-- ─── ARTISAN SHOP LOOP ─── -->
     <section id="shop" class="py-24 px-[10%] bg-[#111] relative faja-divider">
