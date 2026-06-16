@@ -1,5 +1,6 @@
 ---
 import { t, type Language } from '../i18n/utils';
+import DonorBoxWidget from './DonorBoxWidget.astro';
 
 interface Props {
   lang: Language;
@@ -23,11 +24,7 @@ const { lang } = Astro.props;
     <p class="text-sm text-gray-400 mb-4">{t(lang, 'modal.subtitle')}</p>
     
     <div class="w-full flex-grow overflow-y-auto overflow-x-hidden bg-white border-3 border-sangre-viva p-1">
-      <!-- Embed your dynamic payment form components here -->
-      <div class="text-black text-center py-20">
-        <script type="module" src="https://donorbox.org/widgets.js" async></script>
-                <dbox-widget campaign="culture-center" type="donation_form" enable-auto-scroll="true"></dbox-widget>
-      </div>
+      <DonorBoxWidget />
     </div>
   </div>
 </div>
