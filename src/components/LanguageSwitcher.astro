@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   currentLang: 'en' | 'es';
   currentPath: string;
@@ -26,9 +28,9 @@ const alternateUrl = getAlternateLanguageUrl(currentPath, currentLang, alternate
 ---
 
 <div class="language-switcher">
-  <a href={alternateUrl} class="language-toggle" title={`Switch to ${alternateLabel}`}>
+  <Button href={alternateUrl} class="language-toggle">
     {alternateLabel}
-  </a>
+  </Button>
 </div>
 
 <style>
@@ -38,26 +40,7 @@ const alternateUrl = getAlternateLanguageUrl(currentPath, currentLang, alternate
   }
 
   .language-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    background-color: #f6007b;
-    color: #f5eee5;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border: 2px solid #f39c12;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 0 #f39c12;
-  }
-
-  .language-toggle:hover {
-    background-color: #00d2d3;
-    color: #160a08;
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 #f6007b;
+    min-width: 10rem;
+    text-align: center;
   }
 </style>
