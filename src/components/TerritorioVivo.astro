@@ -1,0 +1,39 @@
+---
+import { t, type Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+---
+
+<section class="relative bg-tierra-madre py-20 px-[5%] md:px-[10%] flex justify-center items-center faja-divider">
+  <div class="max-w-4xl w-full flex items-stretch gap-6 md:gap-8 py-2">
+    
+    <!-- The Ceremonial Double-Vertical Accent Bar (Replicated from image) -->
+    <div class="relative min-w-[14px] flex-shrink-0 select-none" aria-hidden="true">
+      <!-- Orange/Gold background offset layer -->
+      <div class="absolute inset-y-0 left-1.5 w-2.5 bg-padre-sol translate-y-2"></div>
+      <!-- Fuchsia foreground main layer -->
+      <div class="absolute inset-y-0 left-0 w-2.5 bg-sangre-viva"></div>
+    </div>
+
+    <!-- Text Content Block -->
+    <div class="flex flex-col justify-center py-8">
+      <!-- Sharp, heavy title utilizing custom font token -->
+      <h2 class="font-title text-3xl sm:text-4xl md:text-[40px] text-agua-pura uppercase tracking-wider mb-8 leading-none">
+        {t(lang, 'territorio.title')}
+      </h2>
+      
+      <!-- Body Copy Block matching the spacing and line-height -->
+      <div class="space-y-6 text-fibra-natural/90 font-body text-base md:text-lg leading-relaxed tracking-wide">
+        <p>{t(lang, 'territorio.body1')}</p>
+        <p>{t(lang, 'territorio.body2')}</p>
+      </div>
+    </div>
+
+  </div>
+  </section>
+  <div class="w-full faja divider h-16"/>
+

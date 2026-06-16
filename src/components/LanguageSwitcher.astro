@@ -1,0 +1,46 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+  currentLang: 'en' | 'es';
+  currentPath: string;
+}
+
+const { currentLang, currentPath } = Astro.props;
+
+function getAlternateLanguageUrl(path: string, fromLang: string, toLang: string): string {
+  const normalizedPath = path.replace(/\/+$|^\/$/g, '');
+
+  if (!normalizedPath || normalizedPath === `/${fromLang}`) {
+    return `/${toLang}/`;
+  }
+
+  if (normalizedPath.startsWith(`/${fromLang}/`)) {
+    return normalizedPath.replace(`/${fromLang}/`, `/${toLang}/`);
+  }
+
+  return `/${toLang}${normalizedPath}`;
+}
+
+const alternateLang = currentLang === 'en' ? 'es' : 'en';
+const alternateLabel = alternateLang === 'en' ? 'English' : 'Español';
+const alternateUrl = getAlternateLanguageUrl(currentPath, currentLang, alternateLang);
+---
+
+<div class="language-switcher">
+  <Button href={alternateUrl} class="language-toggle">
+    {alternateLabel}
+  </Button>
+</div>
+
+<style>
+  .language-switcher {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .language-toggle {
+    min-width: 10rem;
+    text-align: center;
+  }
+</style>
