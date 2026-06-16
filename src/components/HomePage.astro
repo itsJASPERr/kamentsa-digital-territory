@@ -2,7 +2,14 @@
 import { t, type Language } from '../i18n/utils';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import Button from '../components/Button.astro';
+import Hero from './Hero.astro';
+import Vision from './Vision.astro';
+import FamilyCircle from './FamilyCircle.astro';
+import Blueprint from './Blueprint.astro';
+import LivingLoom from './LivingLoom.astro';
+import Altar from './Altar.astro';
 import TerritorioVivo from './TerritorioVivo.astro';
+import Footer from './Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -10,22 +17,6 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-
-// Build-time array with product data
-const crafts = [
-  { 
-    name: t(lang, 'products.0.name'),
-    price: "45.00", 
-    img: "https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?auto=format&fit=crop&w=500&q=80", 
-    desc: t(lang, 'products.0.desc'),
-  },
-  { 
-    name: t(lang, 'products.1.name'),
-    price: "25.00", 
-    img: "https://images.unsplash.com/photo-1518182170546-076616fdcbfa?auto=format&fit=crop&w=500&q=80", 
-    desc: t(lang, 'products.1.desc'),
-  }
-];
 
 const pageTitle = t(lang, 'hero.title');
 const langCode = t(lang, 'language.code');
@@ -60,47 +51,19 @@ const langCode = t(lang, 'language.code');
 
     </header>
 
-    <!-- ─── HERO VIEW ─── -->
-    <section class="h-screen flex flex-col justify-center items-center text-center px-5 pt-16 bg-cover bg-center faja-divider relative" style="background-image: linear-gradient(rgba(12, 12, 12, 0.85), rgba(22, 26, 24, 0.9)), url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?auto=format&fit=crop&w=1920&q=80')">
-      <h2 class="font-title text-5xl md:text-7xl uppercase tracking-wider text-fibra-natural drop-shadow-[4px_4px_0_#f6007b] mb-6">
-        {t(lang, 'hero.title')}
-      </h2>
-      <p class="text-lg md:text-xl max-w-2xl text-gray-300 mb-10">
-        {t(lang, 'hero.subtitle')}
-      </p>
-      <button 
-        id="hero-donate-btn"
-        class="bg-padre-sol text-tierra-madre font-title text-xl uppercase px-8 py-3 shadow-[4px_4px_0_#f6007b] hover:bg-sangre-viva hover:text-fibra-natural hover:shadow-[4px_4px_0_#00d2d3] transition-all cursor-pointer"
-      >
-        {t(lang, 'hero.cta')}
-      </button>
-    </section>
+    <Hero/>
 
-    <!-- ─── NARRATIVE (History) ─── -->
-    <section id="story" class="">
-        <TerritorioVivo lang={lang}/>
-    </section>
+    <Vision/>
 
+    <FamilyCircle/>
 
-    <!-- ─── ARTISAN SHOP LOOP ─── -->
-    <section id="shop" class="py-24 px-[10%] bg-[#111] relative faja-divider">
-      <h2 class="font-title text-5xl text-center text-padre-sol uppercase tracking-wide drop-shadow-[2px_2px_0_#f6007b] mb-16">
-        {t(lang, 'shop.title')}
-      </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {crafts.map((craft) => (
-          <div class="bg-sombra-selva border-3 border-[#222] hover:border-agua-pura transition-all group">
-            <img src={craft.img} alt={craft.name} class="w-full h-60 object-cover border-b-4 border-padre-sol" />
-            <h3 class="font-title text-2xl text-center mt-6 mb-2 uppercase text-fibra-natural">{craft.name}</h3>
-            <p class="px-6 text-sm text-gray-400 text-center">{craft.desc}</p>
-            <span class="block text-xl font-bold text-center text-agua-pura my-6">${craft.price}</span>
-            <Button variant="secondary" class="font-title group-hover:bg-sangre-viva">
-              {t(lang, 'shop.purchase')}
-            </Button>
-          </div>
-        ))}
-      </div>
-    </section>
+    <Blueprint/>
+
+    <LivingLoom lang={lang}/>
+
+    <Altar/>
+
+    <Footer lang={lang}/>
 
     <!-- ─── COMMUNITY PROGRESS GOAL ─── -->
     <section class="py-24 px-[10%] text-center relative faja-divider">

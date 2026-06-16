@@ -1,0 +1,93 @@
+---
+// Section 5: The Living Loom (Artisan Rewards)
+
+const crafts = [
+  { 
+    id: "item-01",
+    name: "The Hummingbird Chumbe", 
+    price: "45.00", 
+    symbolism: "Messenger of the Word",
+    desc: "The hummingbird carries words between the ancestors and the earth. It guards the sacred Borrachero tree. Hand-woven using traditional fibers.", 
+    img: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=600&q=80", // Placeholder for weaving/beads
+    checkoutUrl: "#" 
+  },
+  { 
+    id: "item-02",
+    name: "Sacred Turtle Carving", 
+    price: "85.00", 
+    symbolism: "Inner Strength & Protection",
+    desc: "Carved from fallen native wood—we never harm the trees. The turtle reminds us to walk our spiritual path slowly, leaving a firm footprint.", 
+    img: "https://images.unsplash.com/photo-1610959063231-1e9a2ebfb81b?auto=format&fit=crop&w=600&q=80", // Placeholder for carved wood
+    checkoutUrl: "#"
+  },
+  { 
+    id: "item-03",
+    name: "The Frog Motif", 
+    price: "60.00", 
+    symbolism: "Fertility & The Chagra",
+    desc: "Represents the Chagra (agricultural school of life) and the traditional medicine lines maintained within the community.", 
+    img: "https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=600&q=80", // Placeholder for green texture/beads
+    checkoutUrl: "#"
+  },
+  { 
+    id: "item-04",
+    name: "Ancestral Seed Necklace", 
+    price: "35.00", 
+    symbolism: "Respectful Harmony",
+    desc: "We wait for the seeds to fall naturally. When the tree drops them, it means they are a gift for us to turn into instruments or art.", 
+    img: "https://images.unsplash.com/photo-1599643478524-fb66f8510ad6?auto=format&fit=crop&w=600&q=80", // Placeholder for seeds/jewelry
+    checkoutUrl: "#"
+  }
+];
+---
+
+<section id="loom" class="bg-tierra-madre py-24 px-[5%] md:px-[10%] relative faja-divider">
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="font-title text-4xl sm:text-5xl md:text-6xl text-sangre-viva uppercase tracking-wide mb-8 drop-shadow-[2px_2px_0_#111]">
+        The Living Loom
+      </h2>
+      <p class="text-fibra-natural/90 font-body text-lg md:text-xl leading-relaxed">
+        To the colonizers, we did not know how to read or write books. They did not realize our weaving <span class="italic text-agua-pura font-semibold">is</span> our book. Every piece acquired here provides immediate support to Kamëntsá artisan families and builds a physical brick for the Kabunga sanctuary.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+      {crafts.map((craft) => (
+        <div class="bg-sombra-selva border-4 border-[#222] hover:border-agua-pura hover:shadow-[8px_8px_0_#00d2d3] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+          
+          <div class="relative overflow-hidden aspect-square border-b-4 border-padre-sol">
+            <img 
+              src={craft.img} 
+              alt={craft.name} 
+              class="w-full h-full object-cover filter grayscale contrast-115 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" 
+            />
+            <div class="absolute top-4 left-4 bg-tierra-madre px-3 py-1.5 border-2 border-sangre-viva text-xs font-title font-bold uppercase text-sangre-viva tracking-wider shadow-[3px_3px_0_#111]">
+              {craft.symbolism}
+            </div>
+          </div>
+          
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="font-title text-xl uppercase text-fibra-natural mb-3 tracking-wide">{craft.name}</h3>
+            <p class="text-sm text-fibra-natural/70 font-body flex-grow mb-8 leading-relaxed">
+              {craft.desc}
+            </p>
+            
+            <div class="flex items-center justify-between mt-auto pt-4 border-t-2 border-[#333]">
+              <span class="text-2xl font-title text-agua-pura">${craft.price}</span>
+              <a 
+                href={craft.checkoutUrl}
+                class="bg-transparent text-padre-sol border-2 border-padre-sol px-4 py-2 font-title uppercase text-sm hover:bg-padre-sol hover:text-tierra-madre hover:shadow-[4px_4px_0_#f6007b] transition-all duration-300"
+              >
+                Claim Reward
+              </a>
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
