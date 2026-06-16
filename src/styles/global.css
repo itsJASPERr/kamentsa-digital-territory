@@ -1,24 +1,44 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* ─── 1. IMPORT TAILWIND V4 ─── */
+@import "tailwindcss";
+
+/* ─── 2. THE CHUMBE DESIGN SYSTEM (THEME TOKENS) ─── */
+@theme {
+  /* Mapping the community colors directly into system utility tokens */
+  --color-tierra-madre: #0c0c0c;     /* The fertile soil base */
+  --color-sangre-viva: #f6007b;      /* Fucsia: life force, weaving, & Bëtsknaté */
+  --color-padre-sol: #f39c12;        /* Gold (Shinÿak): clarity of mind */
+  --color-agua-pura: #00d2d3;        /* Turquoise: healing mountain rivers */
+  --color-fibra-natural: #f9f6f0;    /* Raw wool: honesty and pure speech */
+  --color-sombra-selva: #161a18;     /* Deep jungle green for cards */
+
+  /* Mapping the typography engines */
+  --font-title: 'Impact', 'Arial Black', sans-serif;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ─── 3. LAYER BASE OVERRIDES ─── */
 @layer base {
   body {
-    @apply bg-[#0c0c0c] text-[#f9f6f0] font-sans;
-    /* Immersing the canvas inside our woven background pattern */
-    background-image: radial-gradient(rgba(255,255,255,0.05) 10%, transparent 10%),
-                      radial-gradient(rgba(255,255,255,0.05) 10%, transparent 10%);
+    /* Utilizing the brand tokens we generated in the @theme block above */
+    @apply bg-tierra-madre text-fibra-natural font-body;
+    
+    /* The sutil woven background grid representing the threads of a loom */
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 10%, transparent 10%),
+                      radial-gradient(rgba(255, 255, 255, 0.05) 10%, transparent 10%);
     background-size: 8px 8px;
     background-position: 0 0, 4px 4px;
   }
-  
-  /* Strip away curves entirely across all elements to honor weaving geometry */
+
+  /* Structural rule: No curves to respect the rigid geometry of a belt loom */
   * {
     border-radius: 0px !important;
   }
 }
 
-/* Custom layout utilities for our community patterns */
+/* ─── 4. CUSTOM DESIGN SYSTEM COMPONENT STYLES ─── */
+
+/* The linear faja divider pinned to the base of every section boundary */
 .faja-divider::after {
   content: "";
   position: absolute;
@@ -26,9 +46,21 @@
   left: 10%;
   width: 80%;
   height: 6px;
-  background: linear-gradient(90deg, #f6007b 25%, #f39c12 25%, #f39c12 50%, #00d2d3 50%, #00d2d3 75%, #f6007b 75%);
+  background: linear-gradient(
+    90deg, 
+    #f6007b 25%, 
+    #f39c12 25%, #f39c12 50%, 
+    #00d2d3 50%, #00d2d3 75%, 
+    #f6007b 75%
+  );
 }
 
+/* Repeating geometric pattern representing the snake/path of life */
 .serpiente-progress {
-  background: repeating-linear-gradient(45deg, #f6007b, #f6007b 10px, #f39c12 10px, #f39c12 20px);
+  background: repeating-linear-gradient(
+    45deg,
+    #f6007b,
+    #f6007b 10px,
+    #f39c12 10px, #f39c12 20px
+  );
 }
