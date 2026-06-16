@@ -1,0 +1,179 @@
+---
+import { t, type Language } from '../i18n/utils';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import '../styles/global.css';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+
+// Build-time array with product data
+const crafts = [
+  { 
+    name: t(lang, 'products.0.name'),
+    price: "45.00", 
+    img: "https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?auto=format&fit=crop&w=500&q=80", 
+    desc: t(lang, 'products.0.desc'),
+  },
+  { 
+    name: t(lang, 'products.1.name'),
+    price: "25.00", 
+    img: "https://images.unsplash.com/photo-1518182170546-076616fdcbfa?auto=format&fit=crop&w=500&q=80", 
+    desc: t(lang, 'products.1.desc'),
+  }
+];
+
+const pageTitle = t(lang, 'hero.title');
+const langCode = t(lang, 'language.code');
+---
+
+<html lang={langCode}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kamëntsá — {pageTitle}</title>
+  </head>
+  <body>
+    
+    <!-- ─── NAVIGATION (The Path) ─── -->
+    <header class="bg-tierra-madre/95 border-b-4 border-sangre-viva px-[5%] py-4 fixed w-full top-0 z-50 flex justify-between items-center">
+      <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
+        Kamëntsá
+      </h1>
+      <nav class="flex items-center gap-6">
+        <ul class="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wider text-fibra-natural">
+          <li><a href="#story" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.ourHistory')}</a></li>
+          <li><a href="#shop" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.artisanShop')}</a></li>
+        </ul>
+        <button 
+          id="open-modal-btn"
+          class="bg-sangre-viva text-fibra-natural border-2 border-padre-sol px-4 py-2 font-bold uppercase text-xs tracking-wider shadow-[4px_4px_0_#00d2d3] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#f39c12] hover:bg-agua-pura hover:text-tierra-madre transition-all cursor-pointer"
+        >
+          {t(lang, 'nav.donateNow')}
+        </button>   
+
+      </nav>
+               <LanguageSwitcher currentLang={lang} currentPath={Astro.url.pathname} />
+
+    </header>
+
+    <!-- ─── HERO VIEW ─── -->
+    <section class="h-screen flex flex-col justify-center items-center text-center px-5 pt-16 bg-cover bg-center" style="background-image: linear-gradient(rgba(12, 12, 12, 0.85), rgba(22, 26, 24, 0.9)), url('https://images.unsplash.com/photo-1518182170546-076616fdcbfa?auto=format&fit=crop&w=1920&q=80')">
+      <h2 class="font-title text-5xl md:text-7xl uppercase tracking-wider text-fibra-natural drop-shadow-[4px_4px_0_#f6007b] mb-6">
+        {t(lang, 'hero.title')}
+      </h2>
+      <p class="text-lg md:text-xl max-w-2xl text-gray-300 mb-10">
+        {t(lang, 'hero.subtitle')}
+      </p>
+      <button 
+        id="hero-donate-btn"
+        class="bg-padre-sol text-tierra-madre font-title text-xl uppercase px-8 py-3 shadow-[4px_4px_0_#f6007b] hover:bg-sangre-viva hover:text-fibra-natural hover:shadow-[4px_4px_0_#00d2d3] transition-all cursor-pointer"
+      >
+        {t(lang, 'hero.cta')}
+      </button>
+    </section>
+
+    <!-- ─── NARRATIVE (History) ─── -->
+    <section id="story" class="py-24 px-[10%] relative faja-divider">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-title text-4xl text-agua-pura uppercase mb-6">{t(lang, 'legacy.title')}</h2>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            {t(lang, 'legacy.text')}
+          </p>
+        </div>
+        <div class="h-[380px] border-6 border-sangre-viva shadow-[8px_8px_0_#f39c12] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1604028297491-9e7fbcff2d4a?auto=format&fit=crop&w=800&q=80')"></div>
+      </div>
+    </section>
+
+    <!-- ─── ARTISAN SHOP LOOP ─── -->
+    <section id="shop" class="py-24 px-[10%] bg-[#111] relative faja-divider">
+      <h2 class="font-title text-5xl text-center text-padre-sol uppercase tracking-wide drop-shadow-[2px_2px_0_#f6007b] mb-16">
+        {t(lang, 'shop.title')}
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {crafts.map((craft) => (
+          <div class="bg-sombra-selva border-3 border-[#222] hover:border-agua-pura transition-all group">
+            <img src={craft.img} alt={craft.name} class="w-full h-60 object-cover border-b-4 border-padre-sol" />
+            <h3 class="font-title text-2xl text-center mt-6 mb-2 uppercase text-fibra-natural">{craft.name}</h3>
+            <p class="px-6 text-sm text-gray-400 text-center">{craft.desc}</p>
+            <span class="block text-xl font-bold text-center text-agua-pura my-6">${craft.price}</span>
+            <button class="w-full bg-[#222] text-fibra-natural font-title uppercase py-3 group-hover:bg-sangre-viva transition-colors cursor-pointer">
+              {t(lang, 'shop.purchase')}
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ─── COMMUNITY PROGRESS GOAL ─── -->
+    <section class="py-24 px-[10%] text-center relative faja-divider">
+      <h2 class="font-title text-4xl text-padre-sol uppercase mb-4">{t(lang, 'goals.title')}</h2>
+      <div class="max-w-2xl mx-auto bg-[#222] border-2 border-fibra-natural p-[3px] my-10 overflow-hidden">
+        <div class="serpiente-progress h-9 w-[35%] flex items-center justify-center font-bold text-fibra-natural drop-shadow-[1px_1px_2px_#000]">
+          {t(lang, 'goals.progress')}
+        </div>
+      </div>
+      <p class="text-xl font-bold text-agua-pura uppercase tracking-wide">{t(lang, 'goals.description')}</p>
+    </section>
+
+    <!-- ─── THE SACRED MODAL ALTAR ─── -->
+    <div 
+      id="donor-modal"
+      class="fixed inset-0 bg-black/90 flex justify-center items-center z-[2000] p-3 transition-all duration-300 opacity-0 pointer-events-none"
+    >
+      <div class="bg-tierra-madre border-6 border-padre-sol p-10 w-full max-w-[520px] max-h-[92vh] relative flex flex-col overflow-hidden shadow-[0_0_30px_rgba(246,0,123,0.4)]">
+        <button 
+          id="close-modal-btn"
+          class="absolute top-2 right-4 font-title text-4xl text-sangre-viva hover:text-agua-pura transition-colors cursor-pointer"
+        >
+          &times;
+        </button>
+        <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide mb-1">{t(lang, 'modal.title')}</h3>
+        <p class="text-sm text-gray-400 mb-4">{t(lang, 'modal.subtitle')}</p>
+        
+        <div class="w-full flex-grow overflow-y-auto overflow-x-hidden bg-white border-3 border-sangre-viva p-1">
+          <!-- Embed your dynamic payment form components here -->
+          <div class="text-black text-center py-20">
+            [Donorbox Widget Embedded Safely Here]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="bg-[#050505] border-t-4 border-sangre-viva py-12 text-center text-gray-600">
+      <h2 class="font-title text-xl text-padre-sol uppercase mb-2">{t(lang, 'footer.location')}</h2>
+      <p class="text-xs">&copy; {new Date().getFullYear()} {t(lang, 'footer.copyright')}</p>
+    </footer>
+
+    <!-- ─── INTERACTIVE CLIENT SIDE SCRIPT ─── -->
+    <script>
+      const modal = document.getElementById('donor-modal');
+      const openBtn = document.getElementById('open-modal-btn');
+      const heroBtn = document.getElementById('hero-donate-btn');
+      const closeBtn = document.getElementById('close-modal-btn');
+
+      function openModal() {
+        modal?.classList.remove('opacity-0', 'pointer-events-none');
+        modal?.classList.add('opacity-100', 'pointer-events-auto');
+      }
+
+      function closeModal() {
+        modal?.classList.remove('opacity-100', 'pointer-events-auto');
+        modal?.classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      openBtn?.addEventListener('click', openModal);
+      heroBtn?.addEventListener('click', openModal);
+      closeBtn?.addEventListener('click', closeModal);
+
+      modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    </script>
+
+  </body>
+</html>
