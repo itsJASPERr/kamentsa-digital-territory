@@ -4,6 +4,8 @@ export const translations = {
     nav: {
       ourHistory: "Our History",
       artisanShop: "Artisan Shop",
+      familyCircle: "Family Circle",
+      altar: "Altar",
       donateNow: "Donate Now",
     },
     
@@ -69,6 +71,8 @@ export const translations = {
     nav: {
       ourHistory: "Nuestra Historia",
       artisanShop: "Tienda Artesana",
+      familyCircle: "Círculo Familiar",
+      altar: "Altar",
       donateNow: "Donar Ahora",
     },
     

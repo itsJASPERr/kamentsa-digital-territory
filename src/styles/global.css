@@ -19,6 +19,10 @@
 
 /* ─── 3. LAYER BASE OVERRIDES ─── */
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     /* Utilizing the brand tokens we generated in the @theme block above */
     @apply bg-tierra-madre text-fibra-natural font-body;
