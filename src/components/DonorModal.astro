@@ -1,0 +1,58 @@
+---
+import { t, type Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+---
+
+<div 
+  id="donor-modal"
+  class="fixed inset-0 bg-black/90 flex justify-center items-center z-[2000] p-3 transition-all duration-300 opacity-0 pointer-events-none"
+>
+  <div class="bg-tierra-madre border-6 border-padre-sol p-10 w-full max-w-[520px] max-h-[92vh] relative flex flex-col overflow-hidden shadow-[0_0_30px_rgba(246,0,123,0.4)]">
+    <button 
+      id="close-modal-btn"
+      class="absolute top-2 right-4 font-title text-4xl text-sangre-viva hover:text-agua-pura transition-colors cursor-pointer"
+    >
+      &times;
+    </button>
+    <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide mb-1">{t(lang, 'modal.title')}</h3>
+    <p class="text-sm text-gray-400 mb-4">{t(lang, 'modal.subtitle')}</p>
+    
+    <div class="w-full flex-grow overflow-y-auto overflow-x-hidden bg-white border-3 border-sangre-viva p-1">
+      <!-- Embed your dynamic payment form components here -->
+      <div class="text-black text-center py-20">
+        <script type="module" src="https://donorbox.org/widgets.js" async></script>
+                <dbox-widget campaign="culture-center" type="donation_form" enable-auto-scroll="true"></dbox-widget>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('donor-modal');
+  const openBtn = document.getElementById('open-modal-btn');
+  const heroBtn = document.getElementById('hero-donate-btn');
+  const closeBtn = document.getElementById('close-modal-btn');
+
+  function openModal() {
+    modal?.classList.remove('opacity-0', 'pointer-events-none');
+    modal?.classList.add('opacity-100', 'pointer-events-auto');
+  }
+
+  function closeModal() {
+    modal?.classList.remove('opacity-100', 'pointer-events-auto');
+    modal?.classList.add('opacity-0', 'pointer-events-none');
+  }
+
+  openBtn?.addEventListener('click', openModal);
+  heroBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
