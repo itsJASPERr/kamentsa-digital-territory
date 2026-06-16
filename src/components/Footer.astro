@@ -1,4 +1,11 @@
 ---
+import { t, type Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
@@ -37,6 +44,7 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-fibra-natural/10 text-center text-xs font-body uppercase tracking-widest">
+  <h2 class="font-title text-xl text-padre-sol uppercase mb-2">{t(lang, 'footer.location')}</h2>
     &copy; {year} Muchavisoy Family Project. All rights reserved. Tejiendo la vida.
   </div>
 </footer>
