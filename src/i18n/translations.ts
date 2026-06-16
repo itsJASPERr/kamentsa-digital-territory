@@ -14,12 +14,6 @@ export const translations = {
       cta: "Support Our Center",
     },
     
-    // Legacy Section
-    legacy: {
-      title: "Our Legacy",
-      text: "For generations, our elders have painted and woven our history into sacred geometries. This digital canvas exists to extend that legacy across the globe, protecting our cultural house.",
-    },
-
     // Living Territory Section
     territorio: {
       title: "Our Living Territory",
@@ -67,8 +61,6 @@ export const translations = {
     // Language
     language: {
       code: "en",
-      label: "English",
-      alternate: "es",
     },
   },
   
@@ -87,11 +79,6 @@ export const translations = {
       cta: "Apoya Nuestro Centro",
     },
     
-    // Legacy Section
-    legacy: {
-      title: "Nuestro Legado",
-      text: "Durante generaciones, nuestros abuelos han pintado y tejido nuestra historia en geometrías sagradas. Este lienzo digital existe para extender ese legado por todo el mundo, protegiendo nuestra casa cultural.",
-    },
 
     // Living Territory Section
     territorio: {
@@ -140,8 +127,6 @@ export const translations = {
     // Language
     language: {
       code: "es",
-      label: "Español",
-      alternate: "en",
     },
   },
 } as const;
