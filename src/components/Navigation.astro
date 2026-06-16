@@ -1,0 +1,30 @@
+---
+import { t, type Language } from '../i18n/utils';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+
+interface Props {
+  lang: Language;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+---
+
+<header class="bg-tierra-madre/95 border-b-4 border-sangre-viva px-[5%] py-4 fixed w-full top-0 z-50 flex justify-between items-center">
+  <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
+    Kamëntsá
+  </h1>
+  <nav class="flex items-center gap-4">
+    <ul class="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wider text-fibra-natural">
+      <li><a href="#story" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.ourHistory')}</a></li>
+      <li><a href="#shop" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.artisanShop')}</a></li>
+    </ul>
+    <button
+      id="open-modal-btn"
+      class="bg-sangre-viva text-fibra-natural border-2 border-padre-sol px-4 py-2 font-bold uppercase text-xs tracking-wider shadow-[4px_4px_0_#00d2d3] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#f39c12] hover:bg-agua-pura hover:text-tierra-madre transition-all cursor-pointer"
+    >
+      {t(lang, 'nav.donateNow')}
+    </button>
+    <LanguageSwitcher currentLang={lang} currentPath={currentPath} />
+  </nav>
+</header>
