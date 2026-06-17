@@ -1,7 +1,7 @@
 import { translations, type Language } from './translations';
 
 export function getLanguageFromPath(pathname: string): Language {
-  const match = pathname.match(/^\/(en|es)\//);
+  const match = pathname.match(/\/(en|es)(?:\/|$)/);
   return (match?.[1] as Language) || 'en';
 }
 
@@ -32,9 +32,27 @@ export function t(lang: Language, key: string): any {
 export function getAlternateLanguageUrl(currentPath: string, targetLang: Language): string {
   const currentLang = getLanguageFromPath(currentPath);
   if (currentLang === targetLang) return currentPath;
-  
-  // Replace /en/ or /es/ with the target language
-  return currentPath.replace(`/${currentLang}/`, `/${targetLang}/`);
+
+  const normalizedPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+  const segments = normalizedPath.split('/').filter(Boolean);
+  const langIndex = segments.findIndex((segment) => isValidLanguage(segment));
+
+  if (langIndex >= 0) {
+    if (targetLang === 'en') {
+      segments.splice(langIndex, 1);
+    } else {
+      segments[langIndex] = targetLang;
+    }
+
+    return segments.length > 0 ? `/${segments.join('/')}/` : '/';
+  }
+
+  if (targetLang === 'en') {
+    return normalizedPath;
+  }
+
+  segments.push(targetLang);
+  return `/${segments.join('/')}/`;
 }
 
 export const SUPPORTED_LANGUAGES: Language[] = ['en', 'es'];
