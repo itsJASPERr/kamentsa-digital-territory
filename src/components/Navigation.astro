@@ -10,29 +10,72 @@ interface Props {
 const { lang, currentPath } = Astro.props;
 ---
 
-<header class="bg-tierra-madre/95 border-b-4 border-sangre-viva px-[5%] py-4 fixed w-full top-0 z-50 flex justify-between items-center">
-  <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
-    <button
-      type="button"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); history.replaceState(null, '', window.location.pathname + window.location.search);"
-      class="block text-left"
-    >
-      Kamëntsá
-    </button>
-  </h1>
-  <nav class="flex items-center gap-4">
-    <ul class="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wider text-fibra-natural">
+<header class="relative bg-tierra-madre/95 border-b-4 border-sangre-viva px-[5%] py-4 fixed w-full top-0 z-50">
+  <div class="flex items-center justify-between gap-4">
+    <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
+      <button
+        type="button"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); history.replaceState(null, '', window.location.pathname + window.location.search);"
+        class="block text-left"
+      >
+        Kamëntsá
+      </button>
+    </h1>
+    <div class="flex items-center gap-3">
+      <button
+        id="open-modal-btn"
+        class="inline-flex bg-sangre-viva text-fibra-natural border-2 border-padre-sol px-4 py-2 font-bold uppercase text-xs tracking-wider shadow-[4px_4px_0_#00d2d3] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#f39c12] hover:bg-agua-pura hover:text-tierra-madre transition-all cursor-pointer"
+      >
+        {t(lang, 'nav.donateNow')}
+      </button>
+      <button
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="lg:hidden bg-transparent text-fibra-natural border-2 border-transparent px-3 py-2 rounded transition-colors hover:border-sangre-viva/60 hover:bg-sangre-viva/10"
+      >
+        <span class="text-lg">☰</span>
+      </button>
+      <div class="hidden lg:flex gap-6 text-sm font-semibold uppercase tracking-wider text-fibra-natural">
+        <a href="#vision" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.ourHistory')}</a>
+        <a href="#family" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.familyCircle')}</a>
+        <a href="#loom" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.artisanShop')}</a>
+        <a href="#altar" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.altar')}</a>
+      </div>
+      <div class="hidden lg:flex">
+        <LanguageSwitcher currentLang={lang} currentPath={currentPath} />
+      </div>
+    </div>
+  </div>
+  <div id="mobile-nav" class="hidden absolute right-5 top-full mt-2 w-[calc(100%-2rem)] max-w-sm rounded border border-sangre-viva bg-tierra-madre p-4 shadow-[0_10px_30px_rgba(0,0,0,0.3)] lg:hidden">
+    <ul class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider text-fibra-natural">
       <li><a href="#vision" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.ourHistory')}</a></li>
       <li><a href="#family" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.familyCircle')}</a></li>
       <li><a href="#loom" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.artisanShop')}</a></li>
       <li><a href="#altar" class="hover:text-agua-pura transition-colors">{t(lang, 'nav.altar')}</a></li>
     </ul>
-    <button
-      id="open-modal-btn"
-      class="bg-sangre-viva text-fibra-natural border-2 border-padre-sol px-4 py-2 font-bold uppercase text-xs tracking-wider shadow-[4px_4px_0_#00d2d3] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#f39c12] hover:bg-agua-pura hover:text-tierra-madre transition-all cursor-pointer"
-    >
-      {t(lang, 'nav.donateNow')}
-    </button>
-    <LanguageSwitcher currentLang={lang} currentPath={currentPath} />
-  </nav>
+    <div class="mt-4 border-t border-sangre-viva pt-4">
+      <LanguageSwitcher currentLang={lang} currentPath={currentPath} />
+    </div>
+  </div>
 </header>
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  navToggle?.addEventListener('click', () => {
+    if (!mobileNav) return;
+    mobileNav.classList.toggle('hidden');
+    const expanded = mobileNav.classList.contains('hidden') ? 'false' : 'true';
+    navToggle.setAttribute('aria-expanded', expanded);
+  });
+
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!mobileNav) return;
+      mobileNav.classList.add('hidden');
+      navToggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
