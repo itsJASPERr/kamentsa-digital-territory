@@ -1,5 +1,12 @@
 ---
 // Main Header and Full-Screen Mobile Menu
+import { getAlternateLanguageUrl } from '../i18n/utils';
+interface Props {
+  lang: 'en' | 'es';
+  currentPath: string;
+}
+const { lang, currentPath } = Astro.props;
+
 ---
 
 <header class="fixed top-0 w-full z-40 bg-[#0c0c0c]/95 backdrop-blur-sm border-b-4 border-sangre-viva transition-all duration-300">
@@ -82,9 +89,13 @@
   <div class="pb-12 pt-8 flex flex-col items-center gap-6 border-t-2 border-sombra-selva bg-[#0c0c0c]/30">
     <span class="font-body text-xs text-fibra-natural/50 uppercase tracking-widest">Language</span>
     <div class="flex items-center gap-4">
-      <button class="font-title text-lg text-fibra-natural/50 hover:text-white transition-colors">ES</button>
+      <a href={getAlternateLanguageUrl(currentPath, 'es')} class="z-50">
+       <button class={lang === 'es' ? 'font-title text-lg text-white border-b-2 border-padre-sol pb-1' : 'font-title text-lg text-fibra-natural/50 hover:text-white transition-colors'}>ES</button>
+      </a>
       <span class="text-fibra-natural/20">|</span>
-      <button class="font-title text-lg text-white border-b-2 border-padre-sol pb-1">EN</button>
+      <a href={getAlternateLanguageUrl(currentPath, 'en')} class="z-50">
+        <button class={lang === 'en' ? 'font-title text-lg text-white border-b-2 border-padre-sol pb-1' : 'font-title text-lg text-fibra-natural/50 hover:text-white transition-colors'}>EN</button>
+      </a>
     </div>
   </div>
 </div>
