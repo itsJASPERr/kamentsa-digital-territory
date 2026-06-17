@@ -1,5 +1,12 @@
 ---
 // Section 5: The Living Loom (Artisan Rewards)
+import { t, type Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
 
 const crafts = [
   { 

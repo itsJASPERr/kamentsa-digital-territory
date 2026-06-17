@@ -1,5 +1,12 @@
 ---
 // Section 4: The Blueprint of Kabunga
+import { t, type Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
 ---
 
 <section id="blueprint" class="bg-[#111] py-24 px-[5%] md:px-[10%] relative faja-divider">

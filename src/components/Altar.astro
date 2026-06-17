@@ -1,5 +1,12 @@
 ---
+import { t, type Language } from '../i18n/utils';
 import DonorBoxWidget from './DonorBoxWidget.astro';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
 // Section 6: The Altar of Offerings (Fundraising Hub)
 // Integrate this at the top of the section for maximum impact.
 ---

@@ -13,26 +13,26 @@ const year = new Date().getFullYear();
   <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left">
     
     <div class="space-y-4">
-      <h3 class="font-title text-padre-sol uppercase tracking-widest text-lg">Muchavisoy Family</h3>
+      <h3 class="font-title text-padre-sol uppercase tracking-widest text-lg">{t(lang, 'footer.family')}</h3>
       <p class="text-sm font-body leading-relaxed">
-        Weaving peace, preserving ancestral medicine, and protecting the Kamëntsá cosmovision in Sibundoy, Putumayo.
+        {t(lang, 'footer.familyDesc')}
       </p>
     </div>
 
     <div class="space-y-4">
-      <h3 class="font-title text-agua-pura uppercase tracking-widest text-lg">Connect</h3>
+      <h3 class="font-title text-agua-pura uppercase tracking-widest text-lg">{t(lang, 'footer.connect')}</h3>
       <ul class="space-y-2 text-sm font-body">
-        <li><a href="#vision" class="hover:text-padre-sol transition-colors">Our Vision</a></li>
-        <li><a href="#blueprint" class="hover:text-padre-sol transition-colors">The 3 Stages</a></li>
-        <li><a href="#loom" class="hover:text-padre-sol transition-colors">Artisan Shop</a></li>
-        <li><a href="mailto:muchavisoy@email.com" class="hover:text-padre-sol transition-colors">Contact Us</a></li>
+        <li><a href="#vision" class="hover:text-padre-sol transition-colors">{t(lang, 'footer.ourVision')}</a></li>
+        <li><a href="#blueprint" class="hover:text-padre-sol transition-colors">{t(lang, 'footer.theStages')}</a></li>
+        <li><a href="#loom" class="hover:text-padre-sol transition-colors">{t(lang, 'footer.artisanShop')}</a></li>
+        <li><a href="mailto:muchavisoy@email.com" class="hover:text-padre-sol transition-colors">{t(lang, 'footer.contactUs')}</a></li>
       </ul>
     </div>
 
     <div class="space-y-4">
-      <h3 class="font-title text-sangre-viva uppercase tracking-widest text-lg">Walk With Us</h3>
+      <h3 class="font-title text-sangre-viva uppercase tracking-widest text-lg">{t(lang, 'footer.walkWithUs')}</h3>
       <p class="text-sm font-body">
-        Join our mailing list to receive updates on the construction of the Tambo and community events.
+        {t(lang, 'footer.mailingList')}
       </p>
       <input 
         type="email" 
@@ -45,6 +45,6 @@ const year = new Date().getFullYear();
 
   <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-fibra-natural/10 text-center text-xs font-body uppercase tracking-widest">
   <h2 class="font-title text-xl text-padre-sol uppercase mb-2">{t(lang, 'footer.location')}</h2>
-    &copy; {year} Muchavisoy Family Project. All rights reserved. Tejiendo la vida.
+    &copy; {year} {t(lang, 'footer.copyright')}
   </div>
 </footer>

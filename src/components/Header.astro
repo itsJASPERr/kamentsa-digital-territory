@@ -1,8 +1,8 @@
 ---
 // Main Header and Full-Screen Mobile Menu
-import { getAlternateLanguageUrl } from '../i18n/utils';
+import { getAlternateLanguageUrl, t, type Language } from '../i18n/utils';
 interface Props {
-  lang: 'en' | 'es';
+  lang: Language;
   currentPath: string;
 }
 const { lang, currentPath } = Astro.props;
@@ -27,9 +27,9 @@ const { lang, currentPath } = Astro.props;
     </h1>
 
     <nav class="hidden md:flex items-center gap-8">
-      <a href="#vision" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">Vision</a>
-      <a href="#blueprint" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">The Stages</a>
-      <a href="#loom" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">Loom</a>
+      <a href="#vision" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.vision')}</a>
+      <a href="#blueprint" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.stages')}</a>
+      <a href="#loom" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.loom')}</a>
       
       <div class="flex items-center gap-2 border-l-2 border-fibra-natural/20 pl-6 ml-2">
         <button id="lang-es-desk" class="font-title text-sm text-fibra-natural/50 hover:text-white transition-colors">ES</button>
@@ -38,7 +38,7 @@ const { lang, currentPath } = Astro.props;
       </div>
 
       <a href="#altar" class="ml-4 bg-transparent text-sangre-viva border-2 border-sangre-viva px-6 py-2 font-title uppercase text-sm hover:bg-sangre-viva hover:text-fibra-natural hover:shadow-[4px_4px_0_#00d2d3] transition-all duration-300">
-        Support
+        {t(lang, 'nav.support')}
       </a>
     </nav>
 
@@ -61,7 +61,7 @@ const { lang, currentPath } = Astro.props;
 >
   <div class="h-20 px-[5%] flex items-center justify-between border-b-2 border-sombra-selva">
     <span class="font-title text-2xl text-agua-pura uppercase tracking-widest">
-      Menu
+      {t(lang, 'nav.menu')}
     </span>
     <button 
       id="mobile-menu-close" 
@@ -76,18 +76,18 @@ const { lang, currentPath } = Astro.props;
   </div>
 
   <nav class="flex flex-col items-center justify-center flex-grow gap-8 px-[5%]">
-    <a href="#vision" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">The Vision</a>
-    <a href="#family" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">Guardians</a>
-    <a href="#blueprint" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">Blueprint</a>
-    <a href="#loom" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">The Loom</a>
+    <a href="#vision" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.vision')}</a>
+    <a href="#family" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.guardians')}</a>
+    <a href="#blueprint" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.stages')}</a>
+    <a href="#loom" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.loom')}</a>
     
     <a href="#altar" class="mobile-link mt-8 bg-padre-sol text-tierra-madre border-2 border-padre-sol px-10 py-4 font-title text-xl uppercase shadow-[6px_6px_0_#f6007b] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0_#f6007b] transition-all">
-      Offer Support
+      {t(lang, 'nav.offerSupport')}
     </a>
   </nav>
 
   <div class="pb-12 pt-8 flex flex-col items-center gap-6 border-t-2 border-sombra-selva bg-[#0c0c0c]/30">
-    <span class="font-body text-xs text-fibra-natural/50 uppercase tracking-widest">Language</span>
+    <span class="font-body text-xs text-fibra-natural/50 uppercase tracking-widest">{t(lang, 'nav.language')}</span>
     <div class="flex items-center gap-4">
       <a href={getAlternateLanguageUrl(currentPath, 'es')} class="z-50">
        <button class={lang === 'es' ? 'font-title text-lg text-white border-b-2 border-padre-sol pb-1' : 'font-title text-lg text-fibra-natural/50 hover:text-white transition-colors'}>ES</button>
