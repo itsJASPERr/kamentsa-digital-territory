@@ -81,11 +81,11 @@ const crafts = [
               {craft.desc}
             </p>
             
-            <div class="flex items-center justify-between mt-auto pt-4 border-t-2 border-[#333]">
+            <div class="flex flex-col gap-3 mt-auto pt-4 border-t-2 border-[#333] lg:flex-row lg:items-center lg:justify-between">
               <span class="text-2xl font-title text-agua-pura">${craft.price}</span>
               <a 
                 href={craft.checkoutUrl}
-                class="bg-transparent text-padre-sol border-2 border-padre-sol px-4 py-2 font-title uppercase text-sm hover:bg-padre-sol hover:text-tierra-madre hover:shadow-[4px_4px_0_#f6007b] transition-all duration-300"
+                class="w-full text-center bg-transparent text-padre-sol border-2 border-padre-sol px-4 py-2 font-title uppercase text-sm hover:bg-padre-sol hover:text-tierra-madre hover:shadow-[4px_4px_0_#f6007b] transition-all duration-300 lg:w-auto"
               >
                 {t(lang, 'loom.claimReward')}
               </a>
