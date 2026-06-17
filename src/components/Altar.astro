@@ -16,7 +16,7 @@ const { lang } = Astro.props;
     
     <div class="bg-tierra-madre border-2 border-sombra-selva p-8 mb-16 shadow-[8px_8px_0_#0c0c0c]">
       <h3 class="font-title text-2xl text-agua-pura uppercase tracking-wider mb-6 text-center">
-        Our Sanctuary Progress
+        {t(lang, 'altar.progress')}
       </h3>
       <div class="w-full bg-[#222] border-2 border-fibra-natural p-[3px] overflow-hidden">
         <div class="serpiente-progress h-8 w-[35%] flex items-center justify-center font-bold text-fibra-natural drop-shadow-[1px_1px_2px_#000]">
@@ -24,36 +24,36 @@ const { lang } = Astro.props;
         </div>
       </div>
       <p class="text-center text-fibra-natural/60 text-sm mt-4 font-body uppercase tracking-widest">
-        $35,000 raised of $100,000 goal
+        {t(lang, 'altar.fundingStatus')}
       </p>
     </div>
 
     <div class="text-center">
       <h2 class="font-title text-4xl sm:text-5xl text-agua-pura uppercase tracking-wider mb-8">
-        The Altar of Offerings
+        {t(lang, 'altar.title')}
       </h2>
       
       <p class="text-fibra-natural/80 font-body text-lg md:text-xl leading-relaxed mb-12">
-        Every thread we weave is an act of peace. When you give, you are not just a donor; you are a co-creator of this territory. 
+        {t(lang, 'altar.intro')}
       </p>
 
       <div class="grid md:grid-cols-3 gap-6 mb-16">
         <div class="border-2 border-sangre-viva p-6 bg-tierra-madre/20">
-          <h4 class="text-sangre-viva font-title text-lg mb-2">Community Seed</h4>
-          <p class="text-fibra-natural/70 text-sm">Your name hand-carved into a permanent wooden art piece.</p>
+          <h4 class="text-sangre-viva font-title text-lg mb-2">{t(lang, 'altar.tier1Title')}</h4>
+          <p class="text-fibra-natural/70 text-sm">{t(lang, 'altar.tier1Desc')}</p>
         </div>
         <div class="border-2 border-padre-sol p-6 bg-tierra-madre/20">
-          <h4 class="text-padre-sol font-title text-lg mb-2">Messenger Pack</h4>
-          <p class="text-fibra-natural/70 text-sm">Personalized artisan beadwork bracelet.</p>
+          <h4 class="text-padre-sol font-title text-lg mb-2">{t(lang, 'altar.tier2Title')}</h4>
+          <p class="text-fibra-natural/70 text-sm">{t(lang, 'altar.tier2Desc')}</p>
         </div>
         <div class="border-2 border-agua-pura p-6 bg-tierra-madre/20">
-          <h4 class="text-agua-pura font-title text-lg mb-2">Sacred Weaver</h4>
-          <p class="text-fibra-natural/70 text-sm">Traditional Chumbe or hand-carved wood art.</p>
+          <h4 class="text-agua-pura font-title text-lg mb-2">{t(lang, 'altar.tier3Title')}</h4>
+          <p class="text-fibra-natural/70 text-sm">{t(lang, 'altar.tier3Desc')}</p>
         </div>
       </div>
 
       <div class="bg-sombra-selva p-10 shadow-[10px_10px_0_#f6007b]">
-        <p class="font-title text-2xl text-fibra-natural uppercase mb-8">Ready to weave with us?</p>
+        <p class="font-title text-2xl text-fibra-natural uppercase mb-8">{t(lang, 'altar.cta')}</p>
         
         <div class="min-h-[150px] flex items-center justify-center border-2 border-dashed border-fibra-natural/30">
           <DonorBoxWidget />

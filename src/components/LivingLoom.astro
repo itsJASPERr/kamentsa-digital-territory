@@ -53,10 +53,10 @@ const crafts = [
     
     <div class="max-w-4xl mx-auto text-center mb-16">
       <h2 class="font-title text-4xl sm:text-5xl md:text-6xl text-sangre-viva uppercase tracking-wide mb-8 drop-shadow-[2px_2px_0_#111]">
-        The Living Loom
+        {t(lang, 'loom.title')}
       </h2>
       <p class="text-fibra-natural/90 font-body text-lg md:text-xl leading-relaxed">
-        To the colonizers, we did not know how to read or write books. They did not realize our weaving <span class="italic text-agua-pura font-semibold">is</span> our book. Every piece acquired here provides immediate support to Kamëntsá artisan families and builds a physical brick for the Kabunga sanctuary.
+        {t(lang, 'loom.intro')}
       </p>
     </div>
 
@@ -87,7 +87,7 @@ const crafts = [
                 href={craft.checkoutUrl}
                 class="bg-transparent text-padre-sol border-2 border-padre-sol px-4 py-2 font-title uppercase text-sm hover:bg-padre-sol hover:text-tierra-madre hover:shadow-[4px_4px_0_#f6007b] transition-all duration-300"
               >
-                Claim Reward
+                {t(lang, 'loom.claimReward')}
               </a>
             </div>
           </div>
