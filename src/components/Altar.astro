@@ -1,6 +1,7 @@
 ---
 import { t, type Language } from '../i18n/utils';
 import DonorBoxWidget from './DonorBoxWidget.astro';
+import DonationProgress from './DonationProgress.astro';
 
 interface Props {
   lang: Language;
@@ -13,20 +14,15 @@ const { lang } = Astro.props;
 
 <section id="altar" class="bg-[#111] py-24 px-[5%] md:px-[10%] relative border-t-8 border-padre-sol">
   <div class="max-w-4xl mx-auto">
-    
-    <div class="bg-tierra-madre border-2 border-sombra-selva p-8 mb-16 shadow-[8px_8px_0_#0c0c0c]">
-      <h3 class="font-title text-2xl text-agua-pura uppercase tracking-wider mb-6 text-center">
-        {t(lang, 'altar.progress')}
-      </h3>
-      <div class="w-full bg-[#222] border-2 border-fibra-natural p-[3px] overflow-hidden">
-        <div class="serpiente-progress h-8 w-[35%] flex items-center justify-center font-bold text-fibra-natural drop-shadow-[1px_1px_2px_#000]">
-          35%
-        </div>
-      </div>
-      <p class="text-center text-fibra-natural/60 text-sm mt-4 font-body uppercase tracking-widest">
-        {t(lang, 'altar.fundingStatus')}
-      </p>
-    </div>
+
+    <DonationProgress
+      title={t(lang, 'altar.progress')}
+      progressLabel="35%"
+      footerText={t(lang, 'altar.fundingStatus')}
+      wrapperClass="mb-16 p-8"
+      titleClass="font-title text-2xl text-agua-pura uppercase tracking-wider mb-6 text-center"
+      footerClass="text-center text-fibra-natural/60 text-sm mt-4 font-body uppercase tracking-widest"
+    />
 
     <div class="text-center">
       <h2 class="font-title text-4xl sm:text-5xl text-agua-pura uppercase tracking-wider mb-8">
@@ -55,7 +51,7 @@ const { lang } = Astro.props;
       <div class="bg-sombra-selva p-10 shadow-[10px_10px_0_#f6007b]">
         <p class="font-title text-2xl text-fibra-natural uppercase mb-8">{t(lang, 'altar.cta')}</p>
         
-        <div class="min-h-[150px] flex items-center justify-center border-2 border-dashed border-fibra-natural/30">
+        <div class="min-h-[150px] flex items-center justify-center">
           <DonorBoxWidget />
         </div>
       </div>

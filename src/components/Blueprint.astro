@@ -1,6 +1,7 @@
 ---
 // Section 4: The Blueprint of Kabunga
 import { t, type Language } from '../i18n/utils';
+import DonationProgress from './DonationProgress.astro';
 
 interface Props {
   lang: Language;
@@ -16,20 +17,13 @@ const { lang } = Astro.props;
       <h2 class="font-title text-4xl sm:text-5xl md:text-6xl text-padre-sol uppercase tracking-wide drop-shadow-[2px_2px_0_#f6007b] mb-10">
         {t(lang, 'blueprint.title')}
       </h2>
-      
-      <div class="max-w-3xl mx-auto bg-tierra-madre border-2 border-sombra-selva p-6 md:p-8 shadow-[8px_8px_0_#0c0c0c]">
-        <p class="text-xl md:text-2xl font-title text-agua-pura uppercase tracking-wider mb-4">
-          {t(lang, 'blueprint.currentGoal')}
-        </p>
-        <div class="w-full bg-[#222] border-2 border-fibra-natural p-[3px] overflow-hidden">
-          <div class="serpiente-progress h-8 w-[35%] flex items-center justify-center font-bold text-fibra-natural drop-shadow-[1px_1px_2px_#000]">
-            35%
-          </div>
-        </div>
-        <p class="text-fibra-natural/60 text-sm mt-4 font-body uppercase tracking-widest">
-          {t(lang, 'blueprint.fundingMessage')}
-        </p>
-      </div>
+
+      <DonationProgress
+        title={t(lang, 'blueprint.currentGoal')}
+        progressLabel="35%"
+        footerText={t(lang, 'blueprint.fundingMessage')}
+        wrapperClass="max-w-3xl mx-auto"
+      />
     </div>
 
     <div class="grid md:grid-cols-3 gap-10 md:gap-8 items-stretch mt-12">

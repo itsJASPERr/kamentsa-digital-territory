@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  progressLabel: string;
+  footerText: string;
+  value?: number;
+  wrapperClass?: string;
+  shellClass?: string;
+  titleClass?: string;
+  footerClass?: string;
+}
+
+const {
+  title,
+  progressLabel,
+  footerText,
+  value = 35,
+  wrapperClass = '',
+  shellClass = '',
+  titleClass = 'text-xl md:text-2xl font-title text-agua-pura uppercase tracking-wider mb-4',
+  footerClass = 'text-fibra-natural/60 text-sm mt-4 font-body uppercase tracking-widest',
+} = Astro.props;
+---
+
+<div class={`bg-tierra-madre border-2 border-sombra-selva p-6 md:p-8 shadow-[8px_8px_0_#0c0c0c] ${wrapperClass}`.trim()}>
+  <p class={titleClass}>
+    {title}
+  </p>
+ 
+ 
+  <div class="w-full bg-[#222] border-2 border-fibra-natural p-[3px] overflow-hidden">
+    <div class="serpiente-progress h-8 flex items-center justify-center font-bold text-fibra-natural drop-shadow-[1px_1px_2px_#000]" style={`width: ${value}%`}>
+      {progressLabel}
+    </div>
+  </div>
+  <p class={footerClass}>
+    {footerText}
+  </p>
+</div>
