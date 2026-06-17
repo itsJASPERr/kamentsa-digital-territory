@@ -8,6 +8,7 @@ import FamilyCircle from './FamilyCircle.astro';
 import Blueprint from './Blueprint.astro';
 import LivingLoom from './LivingLoom.astro';
 import Altar from './Altar.astro';
+import Header from './Header.astro';
 import Footer from './Footer.astro';
 import '../styles/global.css';
 
@@ -29,8 +30,10 @@ const currentPath = Astro.url.pathname;
     <title>Kamëntsá — {pageTitle}</title>
   </head>
   <body>
-    
-    <Navigation lang={lang} currentPath={currentPath} />
+      
+    <Header lang={lang} currentPath={currentPath} />
+
+    <!-- <Navigation lang={lang} currentPath={currentPath} /> -->
 
     <Hero/>
 
