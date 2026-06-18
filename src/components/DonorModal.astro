@@ -33,6 +33,7 @@ const { lang } = Astro.props;
   const modal = document.getElementById('donor-modal');
   const openBtn = document.getElementById('open-modal-btn');
   const heroBtn = document.getElementById('hero-donate-btn');
+  const altarBtn = document.getElementById('altar-donate-btn');
   const closeBtn = document.getElementById('close-modal-btn');
 
   function openModal() {
@@ -47,6 +48,7 @@ const { lang } = Astro.props;
 
   openBtn?.addEventListener('click', openModal);
   heroBtn?.addEventListener('click', openModal);
+  altarBtn?.addEventListener('click', openModal);
   closeBtn?.addEventListener('click', closeModal);
 
   modal?.addEventListener('click', (e) => {
