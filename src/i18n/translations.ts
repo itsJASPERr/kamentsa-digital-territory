@@ -46,6 +46,28 @@ export const translations = {
       jasperTitle: "A Note From Jasper",
       jasperQuote: "I have lived with the Muchavisoy family for four months. I watched up to 15 people share this home daily in flawless harmony. When difficulties in community living arise, they do not fight. They hold a traditional sharing circle. Everyone speaks, everyone listens with deep discipline, and when the circle is done, the hugs and laughter return immediately. This center is built on that exact foundation of genuine love, respect, and hard truth.",
     },
+
+    // Guardians Section
+    guardians: {
+      eyebrow: "Minga & Lineage",
+      title: "Guardians of the Territory",
+      familyAlt: "The Muchavisoy Family together in Sibundoy",
+      familyQuote: "\"We walk as one body. The work of protecting the Kamëntsá cosmovision belongs to the entire circle.\" — The Muchavisoy Family",
+      rootsEyebrow: "The Roots",
+      rootsTitle: "Taita Miguel's Legacy",
+      rootsMeta: "In Honor & Memory • Transcended as a highly impactful indigenous leader",
+      taitaAlt: "Portrait of the Elder Taita Miguel",
+      rootsBody: "As the anchor of our lineage, Taita Miguel spent his life preserving the medicine logs, traditional melodies, and linguistic frameworks of the Kamëntsá. Though he passed away in 2022, he remains celebrated as one of the territory's most impactful indigenous leaders. His lifelong vision continues to dictate the physical boundaries and spiritual intentions of the communal Tambo.",
+      mantleEyebrow: "The Sacred Mantle",
+      johanName: "Johan Muchavisoy Jacanamijoy",
+      johanAlt: "Portrait of Johan",
+      johanBody1: "Following the physical transition of his father in 2021, Johan Muchavisoy Jacanamijoy stepped forward to carry the spiritual mantle and operational future of our lineage. Walking directly in the footsteps of Taita Miguel, he serves as a dedicated guardian of sacred medicine and traditional Kamëntsá cosmovision.",
+      johanBody2: "Today, he anchors the family's minga, transforming ancestral wisdom into the physical reality of our communal Tambo. For him, leading this initiative is a living extension of the medicine itself-an open invitation ensuring that all global allies are received genuinely as Kabunga (one of us).",
+      bridgeEyebrow: "The Bridge",
+      jasperTitle: "Jasper's Commitment",
+      jasperAlt: "Portrait of Jasper",
+      jasperBody: "Acting as a logistical link between global allies and local traditions, Jasper translates the deep realities of the Sibundoy valley into structured technical milestones. His presence ensures administrative safety and execution clarity across all construction stages.",
+    },
     
     // Blueprint Section
     blueprint: {
@@ -160,6 +182,28 @@ export const translations = {
       intro: "El corazón de este centro es Mamita Clementina, sus seis hijos—Angela, Johan, Miguel, Bairon, Willy, y Chucho—y sus nietos. Los hermanos son los músicos de Vinyayokan, llenando el territorio con canciones ancestrales. Durante años, han abierto sus corazones y puertas a viajeros, tratándolos como iguales absolutos.",
       jasperTitle: "Una Nota De Jasper",
       jasperQuote: "He vivido con la familia Muchavisoy durante cuatro meses. Observé a hasta 15 personas compartir este hogar diariamente en armonía impecable. Cuando surgen dificultades en la convivencia comunitaria, no pelean. Realizan un círculo de compartir tradicional. Todos hablan, todos escuchan con profunda disciplina, y cuando el círculo termina, los abrazos y las risas regresan inmediatamente. Este centro se construye sobre exactamente ese fundamento de amor genuino, respeto y verdad dura.",
+    },
+
+    // Guardians Section
+    guardians: {
+      eyebrow: "Minga y Linaje",
+      title: "Guardianes del Territorio",
+      familyAlt: "La familia Muchavisoy reunida en Sibundoy",
+      familyQuote: "\"Caminamos como un solo cuerpo. La labor de proteger la cosmovisión Kamëntsá pertenece a todo el círculo.\" — Familia Muchavisoy",
+      rootsEyebrow: "Las Raíces",
+      rootsTitle: "Legado del Taita Miguel",
+      rootsMeta: "En honor y memoria • Trascendió como un líder indígena de gran impacto",
+      taitaAlt: "Retrato del Mayor Taita Miguel",
+      rootsBody: "Como ancla de nuestro linaje, el Taita Miguel dedicó su vida a preservar los registros de medicina, las melodías tradicionales y los marcos lingüísticos del pueblo Kamëntsá. Aunque partió físicamente en 2022, sigue siendo celebrado como uno de los líderes indígenas más influyentes del territorio. Su visión de toda la vida continúa marcando los límites físicos y las intenciones espirituales del Tambo comunitario.",
+      mantleEyebrow: "El Manto Sagrado",
+      johanName: "Johan Muchavisoy Jacanamijoy",
+      johanAlt: "Retrato de Johan",
+      johanBody1: "Tras el tránsito físico de su padre en 2021, Johan Muchavisoy Jacanamijoy dio un paso al frente para sostener el manto espiritual y el futuro operativo de nuestro linaje. Caminando directamente sobre las huellas del Taita Miguel, hoy sirve como guardián dedicado de la medicina sagrada y de la cosmovisión tradicional Kamëntsá.",
+      johanBody2: "Hoy, él ancla la minga de la familia, transformando la sabiduría ancestral en la realidad física de nuestro Tambo comunitario. Para él, liderar esta iniciativa es una extensión viva de la medicina misma: una invitación abierta que garantiza que todos los aliados globales sean recibidos genuinamente como Kabunga (uno de nosotros).",
+      bridgeEyebrow: "El Puente",
+      jasperTitle: "Compromiso de Jasper",
+      jasperAlt: "Retrato de Jasper",
+      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en hitos técnicos estructurados. Su presencia garantiza seguridad administrativa y claridad de ejecución en todas las etapas de construcción.",
     },
     
     // Blueprint Section
