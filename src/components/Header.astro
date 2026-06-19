@@ -13,9 +13,11 @@ const { lang, currentPath } = Astro.props;
 <header class="fixed top-0 w-full z-40 bg-[#0c0c0c]/95 backdrop-blur-sm border-b-4 border-sangre-viva transition-all duration-300">
   <div class="max-w-7xl mx-auto px-[5%] md:px-[10%] h-20 flex items-center justify-between">
     
-    <a href="/" class="font-title text-2xl text-fibra-natural uppercase tracking-widest hover:text-agua-pura transition-colors z-50">
-  Vida Kamëntsá
-</a>
+    <a
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); history.replaceState(null, '', window.location.pathname + window.location.search);"
+      class="font-title text-2xl text-fibra-natural uppercase tracking-widest hover:text-agua-pura transition-colors z-50">
+      Vida Kamëntsá
+    </a>
 
 
      <!-- <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
