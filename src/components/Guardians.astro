@@ -1,0 +1,125 @@
+---
+// src/components/Guardians.astro
+import { Image } from 'astro:assets';
+
+// Import your local images
+import groupPhoto from '../assets/familia.jpeg';
+import johanPhoto from '../assets/johan.jpeg';
+import taitaPhoto from '../assets/taita.jpeg';
+import jasperPhoto from '../assets/jasper.jpeg';
+---
+
+<section id="guardians" class="bg-[#0c0c0c] py-24 px-[5%] md:px-[10%] relative overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+
+        
+    <div class="text-center mb-16">
+      <span class="text-padre-sol font-title text-sm tracking-widest uppercase block mb-3">Minga & Lineage</span>
+      <h2 class="font-title text-4xl sm:text-5xl text-fibra-natural uppercase tracking-wider">
+        Guardians of the Territory
+      </h2>
+      <div class="w-24 h-1 bg-sangre-viva mx-auto mt-4"></div>
+    </div>
+
+
+    <div class="mb-24 relative group">
+      <div class="absolute inset-0 bg-padre-sol translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4 duration-300"></div>
+      <div class="border-4 border-[#222] bg-tierra-madre overflow-hidden aspect-[16/9] w-full">
+        <Image 
+          src={groupPhoto} 
+          alt="The Muchavisoy Family together in Sibundoy" 
+          class="w-full h-full object-cover filter sepia-[20%] warm-tone saturate-120"
+        />
+      </div>
+      <div class="bg-[#111] border-t-2 border-fibra-natural/10 p-6">
+        <p class="font-body italic text-sm text-fibra-natural/70 text-center">
+          "We walk as one body. The work of protecting the Kamëntsá cosmovision belongs to the entire circle." — The Muchavisoy Family
+        </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+  <div class="w-full md:w-1/2 relative group shrink-0">
+    <div class="absolute inset-0 bg-agua-pura translate-x-2 translate-y-2 -z-10"></div>
+    <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
+     <Image 
+              src={taitaPhoto} 
+              alt="Portrait of the Elder Taita Miguel" 
+              class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale hover:grayscale-0 transition-all duration-500"
+            />
+    </div>
+  </div>
+  
+  <div class="w-full md:w-1/2 space-y-4">
+    <div class="space-y-1">
+      <span class="font-title text-sm text-sangre-viva tracking-widest uppercase block">The Roots</span>
+      <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">Taita Miguel’s Legacy</h3>
+      <p class="font-body text-xs italic text-padre-sol/80 tracking-wide uppercase">
+        In Honor & Memory • Transcended as a highly impactful indigenous leader (<svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    class="w-6 h-6 text-sangre-viva shrink-0 animate-pulse inline-block"
+    aria-hidden="true"
+  >
+    <path d="M11 3h2v5h5v2h-5v11h-2v-11h-5v-2h5V3z"/>
+  </svg>2021)
+
+      </p>
+    </div>
+    
+    <p class="font-body text-fibra-natural/80 leading-relaxed text-lg pt-2">
+      As the anchor of our lineage, Taita Miguel spent his life preserving the medicine logs, traditional melodies, and linguistic frameworks of the Kamëntsá. Though he passed away in 2022, he remains celebrated as one of the territory's most impactful indigenous leaders. His lifelong vision continues to dictate the physical boundaries and spiritual intentions of the communal Tambo.
+    </p>
+  </div>
+</div>
+
+    
+
+          <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16">
+        <div class="w-full md:w-1/2 relative group shrink-0">
+          <div class="absolute inset-0 bg-sangre-viva -translate-x-2 translate-y-2 -z-10"></div>
+          <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
+            <Image 
+              src={johanPhoto} 
+              alt="Portrait of Johan" 
+              class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        </div>
+      <div class="w-full md:w-1/2 space-y-4">
+    <span class="font-title text-sm text-padre-sol tracking-widest uppercase">The Sacred Mantle</span>
+    <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">Johan Muchavisoy Jacanamijoy</h3>
+    
+    <p class="font-body text-fibra-natural/80 leading-relaxed text-lg">
+      Following the physical transition of his father in 2022, <strong>Johan Muchavisoy Jacanamijoy</strong> stepped forward to carry the spiritual mantle and operational future of our lineage. Walking directly in the footsteps of Taita Miguel, he serves as a dedicated guardian of sacred medicine and traditional Kamëntsá cosmovision. 
+    </p>
+    
+    <p class="font-body text-fibra-natural/70 leading-relaxed text-base pt-2">
+      Today, he anchors the family’s <em>minga</em>, transforming ancestral wisdom into the physical reality of our communal Tambo. For him, leading this initiative is a living extension of the medicine itself—an open invitation ensuring that all global allies are received genuinely as <strong>Kabunga</strong> (one of us).
+    </p>
+  </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+        <div class="w-full md:w-1/2 relative group shrink-0">
+          <div class="absolute inset-0 bg-padre-sol translate-x-2 translate-y-2 -z-10"></div>
+          <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
+            <Image 
+              src={jasperPhoto} 
+              alt="Portrait of Jasper" 
+              class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 space-y-4">
+          <span class="font-title text-sm text-agua-pura tracking-widest uppercase">The Bridge</span>
+          <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">Jasper’s Commitment</h3>
+          <p class="font-body text-fibra-natural/80 leading-relaxed text-lg">
+            Acting as a logistical link between global allies and local traditions, Jasper translates the deep realities of the Sibundoy valley into structured technical milestones. His presence ensures administrative safety and execution clarity across all construction stages.
+          </p>
+        </div>
+      </div>
+
+  </div>
+</section>

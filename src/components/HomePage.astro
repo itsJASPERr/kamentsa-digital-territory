@@ -11,6 +11,7 @@ import Altar from './Altar.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import '../styles/global.css';
+import Guardians from './Guardians.astro';
 
 interface Props {
   lang: Language;
@@ -39,7 +40,7 @@ const currentPath = Astro.url.pathname;
 
     <Vision lang={lang} />
 
-    <FamilyCircle lang={lang} />
+    <Guardians lang={lang} />
 
     <Blueprint lang={lang} />
 

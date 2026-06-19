@@ -13,11 +13,12 @@ const { lang, currentPath } = Astro.props;
 <header class="fixed top-0 w-full z-40 bg-[#0c0c0c]/95 backdrop-blur-sm border-b-4 border-sangre-viva transition-all duration-300">
   <div class="max-w-7xl mx-auto px-[5%] md:px-[10%] h-20 flex items-center justify-between">
     
-    <!-- <a href="/" class="font-title text-2xl text-fibra-natural uppercase tracking-widest hover:text-agua-pura transition-colors z-50">
-      Kabunga
-    </a> -->
+    <a href="/" class="font-title text-2xl text-fibra-natural uppercase tracking-widest hover:text-agua-pura transition-colors z-50">
+  Vida Kamëntsá
+</a>
 
-     <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
+
+     <!-- <h1 class="font-title text-3xl text-padre-sol uppercase tracking-wider drop-shadow-[2px_2px_0_#f6007b]">
       <button
         type="button"
         onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); history.replaceState(null, '', window.location.pathname + window.location.search);"
@@ -25,10 +26,11 @@ const { lang, currentPath } = Astro.props;
       >
         Kamëntsá
       </button>
-    </h1>
+    </h1> -->
 
     <nav class="hidden md:flex items-center gap-8">
       <a href="#vision" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.vision')}</a>
+      <a href="#guardians" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.guardians')}</a>
       <a href="#blueprint" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.stages')}</a>
       <a href="#loom" class="font-body text-sm text-fibra-natural uppercase tracking-widest hover:text-padre-sol transition-colors">{t(lang, 'nav.loom')}</a>
       
@@ -74,7 +76,7 @@ const { lang, currentPath } = Astro.props;
 
   <nav class="flex flex-col items-center justify-center flex-grow gap-8 px-[5%]">
     <a href="#vision" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.vision')}</a>
-    <a href="#family" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.guardians')}</a>
+    <a href="#guardians" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.guardians')}</a>
     <a href="#blueprint" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.stages')}</a>
     <a href="#loom" class="mobile-link font-title text-4xl text-fibra-natural uppercase tracking-wider hover:text-padre-sol transition-colors">{t(lang, 'nav.loom')}</a>
     
