@@ -1,7 +1,6 @@
 ---
-// You can pass a background image as a prop later, 
-// but for now, we will use a stunning placeholder of the valley/mountains.
 import { t, type Language } from '../i18n/utils';
+import sibundoyValley from '../assets/Sibundoy-valley.jpeg';
 
 interface Props {
   lang: Language;
@@ -14,7 +13,7 @@ const { lang } = Astro.props;
   
   <div 
     class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-    style="background-image: url('https://picsum.photos/1920/1080?random=2');"
+    style={`background-image: url('${sibundoyValley.src}');`}
   >
     <div class="absolute inset-0 bg-gradient-to-b from-tierra-madre/80 via-tierra-madre/60 to-tierra-madre"></div>
   </div>
