@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  base: '/kamentsa-digital-territory/',
-  site: 'https://itsjasperr.github.io/kamentsa-digital-territory/',
+  base: '/',
+  site: 'https://vinyiabtumayokan.org/',
   vite: {
     plugins: [tailwindcss()]
   }
