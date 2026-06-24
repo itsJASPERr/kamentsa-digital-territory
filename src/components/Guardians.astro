@@ -1,5 +1,6 @@
 ---
 // src/components/Guardians.astro
+// This component requires the lang prop to handle translations
 import { Image } from 'astro:assets';
 import { t, type Language } from '../i18n/utils';
 
@@ -31,7 +32,7 @@ const { lang } = Astro.props;
 
     <div class="mb-24 relative group">
       <div class="absolute inset-0 bg-padre-sol translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4 duration-300"></div>
-      <div class="border-4 border-[#222] bg-tierra-madre overflow-hidden aspect-[16/9] w-full">
+      <div class="border-4 border-[#222] bg-tierra-madre overflow-hidden aspect-[4/3] sm:aspect-[16/9] w-full">
         <Image 
           src={groupPhoto} 
           alt={t(lang, 'guardians.familyAlt')} 
@@ -60,7 +61,7 @@ const { lang } = Astro.props;
   <div class="w-full md:w-1/2 space-y-4">
     <div class="space-y-1">
       <span class="font-title text-sm text-sangre-viva tracking-widest uppercase block">{t(lang, 'guardians.rootsEyebrow')}</span>
-      <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.rootsTitle')}</h3>
+      <h3 class="font-title text-2xl sm:text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.rootsTitle')}</h3>
       <p class="font-body text-xs italic text-padre-sol/80 tracking-wide uppercase">
         {t(lang, 'guardians.rootsMeta')} (<svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -75,7 +76,7 @@ const { lang } = Astro.props;
       </p>
     </div>
     
-    <p class="font-body text-fibra-natural/80 leading-relaxed text-lg pt-2">
+    <p class="font-body text-fibra-natural/80 leading-relaxed text-base sm:text-lg pt-2">
       {t(lang, 'guardians.rootsBody')}
     </p>
   </div>
@@ -83,7 +84,7 @@ const { lang } = Astro.props;
 
     
 
-          <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16">
+          <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16 mt-16 md:mt-24">
         <div class="w-full md:w-1/2 relative group shrink-0">
           <div class="absolute inset-0 bg-sangre-viva -translate-x-2 translate-y-2 -z-10"></div>
           <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
@@ -96,9 +97,9 @@ const { lang } = Astro.props;
         </div>
       <div class="w-full md:w-1/2 space-y-4">
     <span class="font-title text-sm text-padre-sol tracking-widest uppercase">{t(lang, 'guardians.mantleEyebrow')}</span>
-    <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.johanName')}</h3>
+    <h3 class="font-title text-2xl sm:text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.johanName')}</h3>
     
-    <p class="font-body text-fibra-natural/80 leading-relaxed text-lg">
+    <p class="font-body text-fibra-natural/80 leading-relaxed text-base sm:text-lg">
       {t(lang, 'guardians.johanBody1')} 
     </p>
     
@@ -108,7 +109,7 @@ const { lang } = Astro.props;
   </div>
       </div>
 
-      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16 mt-16 md:mt-24">
         <div class="w-full md:w-1/2 relative group shrink-0">
           <div class="absolute inset-0 bg-padre-sol translate-x-2 translate-y-2 -z-10"></div>
           <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
@@ -121,8 +122,8 @@ const { lang } = Astro.props;
         </div>
         <div class="w-full md:w-1/2 space-y-4">
           <span class="font-title text-sm text-agua-pura tracking-widest uppercase">{t(lang, 'guardians.bridgeEyebrow')}</span>
-          <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.jasperTitle')}</h3>
-          <p class="font-body text-fibra-natural/80 leading-relaxed text-lg">
+          <h3 class="font-title text-2xl sm:text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.jasperTitle')}</h3>
+          <p class="font-body text-fibra-natural/80 leading-relaxed text-base sm:text-lg">
             {t(lang, 'guardians.jasperBody')}
           </p>
         </div>
