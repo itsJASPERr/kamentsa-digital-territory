@@ -10,37 +10,70 @@ const { lang } = Astro.props;
 ---
 
 <section id="vision" class="bg-tierra-madre py-24 px-[5%] md:px-[10%] flex justify-center items-center relative faja-divider">
-  <div class="max-w-5xl w-full flex flex-col md:flex-row items-stretch gap-8 md:gap-12 py-4">
+  <div class="max-w-6xl w-full flex flex-col gap-16 py-4">
 
-    <div class="hidden md:block relative min-w-[14px] flex-shrink-0 select-none" aria-hidden="true">
-      <div class="absolute inset-y-0 left-1.5 w-2.5 bg-padre-sol translate-y-2"></div>
-      <div class="absolute inset-y-0 left-0 w-2.5 bg-sangre-viva"></div>
-    </div>
-
-    <div class="md:hidden flex h-[14px] w-32 relative mb-2 select-none" aria-hidden="true">
-       <div class="absolute inset-x-0 top-1.5 h-2.5 bg-padre-sol translate-x-2"></div>
-       <div class="absolute inset-x-0 top-0 h-2.5 bg-sangre-viva"></div>
-    </div>
-
-    <div class="flex flex-col justify-center">
-      <h2 class="font-title text-4xl sm:text-5xl md:text-[56px] text-agua-pura uppercase tracking-wider mb-10 leading-[1.1]">
-        {t(lang, 'vision.title')} —<br/> 
-        <span class="text-padre-sol text-3xl sm:text-4xl md:text-[40px]">{t(lang, 'vision.subtitle')}</span>
-      </h2>
+    <!-- THE ANCHOR QUOTE WITH SIGNATURE FAJA STRIPES -->
+    <div class="flex flex-col md:flex-row items-stretch gap-8 md:gap-12">
       
-      <div class="space-y-8 text-fibra-natural/90 font-body text-lg md:text-xl leading-relaxed tracking-wide">
-        <p>
-          {t(lang, 'vision.p1')} <span class="text-sangre-viva font-bold uppercase tracking-wider text-sm border-b-2 border-sangre-viva pb-1 ml-2">{t(lang, 'vision.p1Highlight')}</span>
-        </p>
-        
-        <p>
-          {t(lang, 'vision.p2')}
-        </p>
+      <!-- Desktop Ribbon Accent -->
+      <div class="hidden md:block relative min-w-[14px] flex-shrink-0 select-none" aria-hidden="true">
+        <div class="absolute inset-y-0 left-1.5 w-2.5 bg-padre-sol translate-y-2"></div>
+        <div class="absolute inset-y-0 left-0 w-2.5 bg-sangre-viva"></div>
+      </div>
 
-        <p class="pl-6 border-l-2 border-sombra-selva text-gray-300">
-          {t(lang, 'vision.p3')}
+      <!-- Mobile Ribbon Accent -->
+      <div class="md:hidden flex h-[14px] w-32 relative mb-2 select-none" aria-hidden="true">
+         <div class="absolute inset-x-0 top-1.5 h-2.5 bg-padre-sol translate-x-2"></div>
+         <div class="absolute inset-x-0 top-0 h-2.5 bg-sangre-viva"></div>
+      </div>
+
+      <!-- Main Quote Body -->
+      <div class="flex flex-col justify-center">
+        <h2 class="font-title text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-fibra-natural leading-snug tracking-wide italic mb-4">
+          {t(lang, 'vision.quote')}
+        </h2>
+        <p class="font-body text-padre-sol font-bold uppercase tracking-widest text-sm">
+          {t(lang, 'vision.author')}
         </p>
       </div>
+    </div>
+
+    <!-- THE THREE COSMIC PILLARS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 border-t border-fibra-natural/10 pt-12">
+      
+      <!-- Pillar 1: The Wind -->
+      <div class="space-y-3">
+        <span class="text-agua-pura font-title text-4xl opacity-60 block">01</span>
+        <h3 class="font-title text-xl md:text-2xl text-padre-sol uppercase tracking-wider">
+          {t(lang, 'vision.pillar1Title')}
+        </h3>
+        <p class="font-body text-fibra-natural/90 leading-relaxed text-base tracking-wide">
+          {t(lang, 'vision.pillar1Desc')}
+        </p>
+      </div>
+
+      <!-- Pillar 2: The Space -->
+      <div class="space-y-3">
+        <span class="text-sangre-viva font-title text-4xl opacity-60 block">02</span>
+        <h3 class="font-title text-xl md:text-2xl text-padre-sol uppercase tracking-wider">
+          {t(lang, 'vision.pillar2Title')}
+        </h3>
+        <p class="font-body text-fibra-natural/90 leading-relaxed text-base tracking-wide">
+          {t(lang, 'vision.pillar2Desc')}
+        </p>
+      </div>
+
+      <!-- Pillar 3: The Offering -->
+      <div class="space-y-3">
+        <span class="text-agua-pura font-title text-4xl opacity-60 block">03</span>
+        <h3 class="font-title text-xl md:text-2xl text-padre-sol uppercase tracking-wider">
+          {t(lang, 'vision.pillar3Title')}
+        </h3>
+        <p class="font-body text-fibra-natural/90 leading-relaxed text-base tracking-wide">
+          {t(lang, 'vision.pillar3Desc')}
+        </p>
+      </div>
+
     </div>
 
   </div>
