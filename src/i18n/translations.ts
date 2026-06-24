@@ -19,24 +19,26 @@ export const translations = {
     
     // Hero Section
     hero: {
-      title: "Weaving Sacred Memory",
-      subtitle: "Preserving the millenary knowledge, art, and territorial autonomy of the Kamëntsá community in the Sibundoy Valley.",
+      title: "Vinyiabtumayokan",
+      subtitle: "Winds of the Putumayo",
       cta: "Support Our Center",
       seed: "The Seed of Taita Miguel Angel Muchavisoy",
       heading: "Weaving Ancestral Peace",
-      description: "Expanding a sacred sanctuary of medicine, art, and community in the Sibundoy Valley. Hand-seeded by the late Taita Miguel and brought to life by his family to share with the world.",
-      supportBtn: "Support the Sanctuary",
+      description: "A sacred space of healing, harmonization, and a return to life to find our own origin. Hand-seeded by the late Taita Miguel and brought to life by his family in the Sibundoy Valley to share with the world.",
+      supportBtn: "Enter the Space",
       videoBtn: "Watch Our Video",
     },
     
     // Vision Section
     vision: {
-      title: "Kabunga",
-      subtitle: "For the Community, For the World",
-      p1: "Globalization and modernization bring noise, spreading disinformation and threatening to fade the millenary knowledge of the Kamëntsá people.",
-      p1Highlight: "This project is our answer.",
-      p2: "For 10 years, our family has shared sacred Yagé medicine in a humble, basic Tambo on our ancestral land. Now, it is time to expand this home into a fully realized Cultural Center.",
-      p3: "Unlike private projects, our doors will be completely open to the entire native community for workshops, traditional gastronomy, and ancestral events, while offering travelers from all over the world a safe, loving space to slow down, heal, and remember.",
+      quote: '"The center of healing, harmonization, returning to life to find our own origin. The wind is life, the space is family, and what is offered is life."',
+      author: "— The Muchavisoy Family",
+      pillar1Title: "The Wind is Life",
+      pillar1Desc: "Vinyiabtumayokan translates to the Winds of the Putumayo. The wind is the breath of the territory, the unseen spirit that moves through the valley. It is the vital force that cleanses, harmonizes, and awakens us so we may trace our steps back to our true origin.",
+      pillar2Title: "The Space is Family",
+      pillar2Desc: "We are not building an institution; we are raising a communal Tambo. To step into this space is to step into the warmth of our hearth. Every wall and firepit is an extension of our lineage, welcoming you to sit with us as Kabunga—one of us.",
+      pillar3Title: "The Offering is Life",
+      pillar3Desc: "What is shared here transcends transaction. Through the sacred medicine, traditional chants, and communal fire, we do not offer a service. We offer a direct transmission of life, inviting you to remember who you are.",
     },
     
     // Family Circle Section
@@ -57,12 +59,12 @@ export const translations = {
       rootsTitle: "Taita Miguel's Legacy",
       rootsMeta: "In Honor & Memory • Transcended as a highly impactful indigenous leader",
       taitaAlt: "Portrait of the Elder Taita Miguel",
-      rootsBody: "As the anchor of our lineage, Taita Miguel spent his life preserving the medicine logs, traditional melodies, and linguistic frameworks of the Kamëntsá. Though he passed away in 2022, he remains celebrated as one of the territory's most impactful indigenous leaders. His lifelong vision continues to dictate the physical boundaries and spiritual intentions of the communal Tambo.",
+      rootsBody: "As the anchor of our lineage, Taita Miguel spent his life preserving the medicine logs, traditional melodies, and linguistic frameworks of the Kamëntsá. Though he passed away in 2021, he remains celebrated as one of the territory's most impactful indigenous leaders. His lifelong vision continues to dictate the physical boundaries and spiritual intentions of the communal Tambo.",
       mantleEyebrow: "The Sacred Mantle",
       johanName: "Johan Muchavisoy Jacanamijoy",
       johanAlt: "Portrait of Johan",
       johanBody1: "Following the physical transition of his father in 2021, Johan Muchavisoy Jacanamijoy stepped forward to carry the spiritual mantle and operational future of our lineage. Walking directly in the footsteps of Taita Miguel, he serves as a dedicated guardian of sacred medicine and traditional Kamëntsá cosmovision.",
-      johanBody2: "Today, he anchors the family's minga, transforming ancestral wisdom into the physical reality of our communal Tambo. For him, leading this initiative is a living extension of the medicine itself-an open invitation ensuring that all global allies are received genuinely as Kabunga (one of us).",
+      johanBody2: "Today, he anchors the family's minga, transforming ancestral wisdom into the physical reality of our communal Tambo. For him, leading this initiative is a living extension of the medicine itself—an open invitation ensuring that all global allies are received genuinely as Kabunga (one of us).",
       bridgeEyebrow: "The Bridge",
       jasperTitle: "Jasper's Commitment",
       jasperAlt: "Portrait of Jasper",
@@ -71,7 +73,7 @@ export const translations = {
     
     // Blueprint Section
     blueprint: {
-      title: "The Blueprint of Kabunga",
+      title: "The Blueprint of Vinyiabtumayokan",
       currentGoal: "Current Goal: Funding Stage 1 (The Tambo)",
       fundingMessage: "Every contribution builds the foundation",
       stage1Title: "The Core Foundation",
@@ -90,14 +92,14 @@ export const translations = {
     // Living Loom Section
     loom: {
       title: "The Living Loom",
-      intro: "To the colonizers, we did not know how to read or write books. They did not realize our weaving is our book. Every piece acquired here provides immediate support to Kamëntsá artisan families and builds a physical brick for the Kabunga sanctuary.",
+      intro: "To the colonizers, we did not know how to read or write books. They did not realize our weaving is our book. Every piece acquired here provides immediate support to Kamëntsá artisan families and builds a physical brick for the Vinyiabtumayokan center.",
       claimReward: "Claim Reward",
     },
     
     // Altar Section
     altar: {
       title: "The Altar of Offerings",
-      progress: "Our Sanctuary Progress",
+      progress: "Our Center Progress",
       fundingStatus: "$35,000 raised of $100,000 goal",
       intro: "Every thread we weave is an act of peace. When you give, you are not just a donor; you are a co-creator of this territory.",
       tier1Title: "Community Seed",
@@ -156,24 +158,26 @@ export const translations = {
     
     // Hero Section
     hero: {
-      title: "Tejiendo Memoria Sagrada",
-      subtitle: "Preservando el conocimiento milenario, el arte y la autonomía territorial de la comunidad Kamëntsá en el Valle de Sibundoy.",
+      title: "Vinyiabtumayokan",
+      subtitle: "Vientos del Putumayo",
       cta: "Apoya Nuestro Centro",
       seed: "La Semilla de Taita Miguel Angel Muchavisoy",
       heading: "Tejiendo Paz Ancestral",
-      description: "Expandiendo un santuario sagrado de medicina, arte y comunidad en el Valle de Sibundoy. Sembrado por el difunto Taita Miguel y traído a la vida por su familia para compartir con el mundo.",
-      supportBtn: "Apoya el Santuario",
+      description: "Un espacio sagrado de sanación, armonización y un volver a la vida para encontrar nuestro propio origen. Sembrado por el difunto Taita Miguel y traído a la vida por su familia en el Valle de Sibundoy para compartir con el mundo.",
+      supportBtn: "Apoya el Centro",
       videoBtn: "Ver Nuestro Video",
     },
     
     // Vision Section
     vision: {
-      title: "Kabunga",
-      subtitle: "Para la Comunidad, Para el Mundo",
-      p1: "La globalización y modernización traen ruido, difundiendo desinformación y amenazando con desvanecerse el conocimiento milenario del pueblo Kamëntsá.",
-      p1Highlight: "Este proyecto es nuestra respuesta.",
-      p2: "Durante 10 años, nuestra familia ha compartido medicina sagrada Yagé en un humilde y básico Tambo en nuestra tierra ancestral. Ahora, es tiempo de expandir este hogar en un Centro Cultural completamente realizado.",
-      p3: "A diferencia de proyectos privados, nuestras puertas estarán completamente abiertas a toda la comunidad nativa para talleres, gastronomía tradicional y eventos ancestrales, mientras ofrecemos a viajeros de todo el mundo un espacio seguro y amoroso para desacelerar, sanar y recordar.",
+      quote: '"El centro de sanación, armonización, volver a la vida para encontrar nuestro propio origen. El viento es la vida, el espacio la familia, y lo que se brinda es la vida."',
+      author: "— La Familia Muchavisoy",
+      pillar1Title: "El Viento es la Vida",
+      pillar1Desc: "Vinyiabtumayokan se traduce como los Vientos del Putumayo. El viento es el aliento del territorio, el espíritu invisible que se mueve por el valle. Es la fuerza vital que nos limpia, armoniza y despierta para que podamos desandar nuestros pasos hacia nuestro verdadero origen.",
+      pillar2Title: "El Espacio es la Familia",
+      pillar2Desc: "No estamos construyendo una institución; estamos levantando un Tambo comunal. Entrar en este espacio es entrar en la calidez de nuestro hogar. Cada pared y fogón es una extensión de nuestro linaje, dándote la bienvenida a sentarte con nosotros como Kabunga—uno de nosotros.",
+      pillar3Title: "Lo que se brinda es la Vida",
+      pillar3Desc: "Lo que se comparte aquí trasciende la transacción. A través de la medicina sagrada, los cantos tradicionales y el fuego comunal, no ofrecemos un servicio. Ofrecemos una transmisión directa de vida, invitándote a recordar quién eres.",
     },
     
     // Family Circle Section
@@ -194,7 +198,7 @@ export const translations = {
       rootsTitle: "Legado del Taita Miguel",
       rootsMeta: "En honor y memoria • Trascendió como un líder indígena de gran impacto",
       taitaAlt: "Retrato del Mayor Taita Miguel",
-      rootsBody: "Como ancla de nuestro linaje, el Taita Miguel dedicó su vida a preservar los registros de medicina, las melodías tradicionales y los marcos lingüísticos del pueblo Kamëntsá. Aunque partió físicamente en 2022, sigue siendo celebrado como uno de los líderes indígenas más influyentes del territorio. Su visión de toda la vida continúa marcando los límites físicos y las intenciones espirituales del Tambo comunitario.",
+      rootsBody: "Como ancla de nuestro linaje, el Taita Miguel dedicó su vida a preservar los registros de medicina, las melodías tradicionales y los marcos lingüísticos del pueblo Kamëntsá. Aunque partió físicamente en 2021, sigue siendo celebrado como uno de los líderes indígenas más influyentes del territorio. Su visión de toda la vida continúa marcando los límites físicos y las intenciones espirituales del Tambo comunitario.",
       mantleEyebrow: "El Manto Sagrado",
       johanName: "Johan Muchavisoy Jacanamijoy",
       johanAlt: "Retrato de Johan",
@@ -203,12 +207,12 @@ export const translations = {
       bridgeEyebrow: "El Puente",
       jasperTitle: "Compromiso de Jasper",
       jasperAlt: "Retrato de Jasper",
-      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en hitos técnicos estructurados. Su presencia garantiza seguridad administrativa y claridad de ejecución en todas las etapas de construcción.",
+      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en hitos técnicos estructurados. His presence garantiza seguridad administrativa y claridad de ejecución en todas las etapas de construcción.",
     },
     
     // Blueprint Section
     blueprint: {
-      title: "El Plano de Kabunga",
+      title: "El Plano de Vinyiabtumayokan",
       currentGoal: "Objetivo Actual: Financiamiento Etapa 1 (El Tambo)",
       fundingMessage: "Cada contribución construye el fundamento",
       stage1Title: "El Fundamento Central",
@@ -227,14 +231,14 @@ export const translations = {
     // Living Loom Section
     loom: {
       title: "El Telar Vivo",
-      intro: "Para los colonizadores, no sabíamos cómo leer o escribir libros. No se dieron cuenta de que nuestro tejido es nuestro libro. Cada pieza adquirida aquí proporciona apoyo inmediato a familias artesanas Kamëntsá y construye un ladrillo físico para el santuario de Kabunga.",
+      intro: "Para los colonizadores, no sabíamos cómo leer o escribir libros. No se dieron cuenta de que nuestro tejido es nuestro libro. Cada pieza adquirida aquí proporciona apoyo inmediato a familias artesanas Kamëntsá y construye un ladrillo físico para el centro de Vinyiabtumayokan.",
       claimReward: "Reclamar Recompensa",
     },
     
     // Altar Section
     altar: {
       title: "El Altar de Ofrendas",
-      progress: "Nuestro Progreso del Santuario",
+      progress: "Nuestro Progreso del Centro",
       fundingStatus: "$35,000 recaudados de $100,000 objetivo",
       intro: "Cada hilo que tejemos es un acto de paz. Cuando das, no eres solo un donante; eres un co-creador de este territorio.",
       tier1Title: "Semilla Comunitaria",
