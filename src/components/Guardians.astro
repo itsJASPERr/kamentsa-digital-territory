@@ -1,13 +1,13 @@
 ---
-// src/components/Guardians.astro
-import { Image } from 'astro:assets';
-import { t, type Language } from '../i18n/utils';
+// This component requires the lang prop to handle translations
+import { Image } from "astro:assets";
+import { t, type Language } from "../i18n/utils";
 
 // Import your local images
-import groupPhoto from '../assets/familia.jpeg';
-import johanPhoto from '../assets/johan.jpeg';
-import taitaPhoto from '../assets/taita.jpeg';
-import jasperPhoto from '../assets/jasper.jpeg';
+import groupPhoto from "../assets/familia.jpeg";
+import johanPhoto from "../assets/johan.jpeg";
+import taitaPhoto from "../assets/taita.jpeg";
+import jasperPhoto from "../assets/jasper.jpeg";
 
 interface Props {
   lang: Language;
@@ -16,117 +16,166 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<section id="guardians" class="bg-[#0c0c0c] py-24 px-[5%] md:px-[10%] relative overflow-hidden">
-  <div class="max-w-6xl mx-auto">
-
-        
-    <div class="text-center mb-16">
-      <span class="text-padre-sol font-title text-sm tracking-widest uppercase block mb-3">{t(lang, 'guardians.eyebrow')}</span>
-      <h2 class="font-title text-4xl sm:text-5xl text-fibra-natural uppercase tracking-wider">
-        {t(lang, 'guardians.title')}
+<section
+  id="guardians"
+  class="bg-[#0c0c0c] py-32 px-[5%] md:px-[10%] relative border-t border-fibra-natural/10"
+>
+  <div class="max-w-6xl mx-auto space-y-32">
+    <!-- SECTION INTRO & FAMILY QUOTE -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span
+        class="font-title text-sm text-agua-pura tracking-widest uppercase block"
+      >
+        {t(lang, "guardians.eyebrow")}
+      </span>
+      <h2 
+        class="font-title text-4xl md:text-5xl text-fibra-natural uppercase tracking-wide"
+      >
+        {t(lang, "guardians.title")}
       </h2>
-      <div class="w-24 h-1 bg-sangre-viva mx-auto mt-4"></div>
-    </div>
 
-
-    <div class="mb-24 relative group">
-      <div class="absolute inset-0 bg-padre-sol translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-4 group-hover:translate-y-4 duration-300"></div>
-      <div class="border-4 border-[#222] bg-tierra-madre overflow-hidden aspect-[16/9] w-full">
+      <div class="border-4 border-[#222] bg-tierra-madre overflow-hidden aspect-[4/3] sm:aspect-[16/9] w-full">
         <Image 
           src={groupPhoto} 
           alt={t(lang, 'guardians.familyAlt')} 
           class="w-full h-full object-cover filter sepia-[20%] warm-tone saturate-120"
         />
       </div>
-      <div class="bg-[#111] border-t-2 border-fibra-natural/10 p-6">
-        <p class="font-body italic text-sm text-fibra-natural/70 text-center">
-          {t(lang, 'guardians.familyQuote')}
+      
+      <p class="font-body text-padre-sol/90 italic text-lg pt-4">
+        {t(lang, "guardians.familyQuote")}
+      </p>
+    </div>
+
+    <!-- BIOGRAPHY 1: THE ROOTS (TAITA MIGUEL) -->
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <!-- Image Block -->
+      <div class="w-full md:w-1/2 relative group shrink-0">
+        <div
+          class="absolute inset-0 bg-padre-sol translate-x-2 translate-y-2 -z-10"
+        >
+        </div>
+        <div
+          class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden"
+        >
+          <Image
+            src={taitaPhoto}
+            alt={t(lang, "guardians.taitaAlt")}
+            class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale group-hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
+      </div>
+
+      <!-- Text Block -->
+      <div class="w-full md:w-1/2 space-y-4">
+        <span
+          class="font-title text-sm text-padre-sol tracking-widest uppercase block"
+        >
+          {t(lang, "guardians.rootsEyebrow")}
+        </span>
+        <h3
+          class="font-title text-3xl md:text-4xl text-fibra-natural uppercase tracking-wide"
+        >
+          {t(lang, "guardians.rootsTitle")}
+        </h3>
+        <p
+          class="font-body text-xs text-agua-pura uppercase tracking-wider block"
+        >
+          {t(lang, "guardians.rootsMeta")} (<svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6 text-sangre-viva shrink-0 animate-pulse inline-block"
+            aria-hidden="true"
+          >
+            <path d="M11 3h2v5h5v2h-5v11h-2v-11h-5v-2h5V3z"></path>
+          </svg>2021)
+          </p>
+        <p class="font-body text-fibra-natural/80 leading-relaxed text-lg pt-2">
+          {t(lang, "guardians.rootsBody")}
         </p>
       </div>
     </div>
 
-    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-  <div class="w-full md:w-1/2 relative group shrink-0">
-    <div class="absolute inset-0 bg-agua-pura translate-x-2 translate-y-2 -z-10"></div>
-    <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
-     <Image 
-              src={taitaPhoto} 
-              alt={t(lang, 'guardians.taitaAlt')} 
-              class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale hover:grayscale-0 transition-all duration-500"
-            />
-    </div>
-  </div>
-  
-  <div class="w-full md:w-1/2 space-y-4">
-    <div class="space-y-1">
-      <span class="font-title text-sm text-sangre-viva tracking-widest uppercase block">{t(lang, 'guardians.rootsEyebrow')}</span>
-      <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.rootsTitle')}</h3>
-      <p class="font-body text-xs italic text-padre-sol/80 tracking-wide uppercase">
-        {t(lang, 'guardians.rootsMeta')} (<svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    class="w-6 h-6 text-sangre-viva shrink-0 animate-pulse inline-block"
-    aria-hidden="true"
-  >
-    <path d="M11 3h2v5h5v2h-5v11h-2v-11h-5v-2h5V3z"/>
-  </svg>2021)
-
-      </p>
-    </div>
-    
-    <p class="font-body text-fibra-natural/80 leading-relaxed text-lg pt-2">
-      {t(lang, 'guardians.rootsBody')}
-    </p>
-  </div>
-</div>
-
-    
-
-          <div class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16">
-        <div class="w-full md:w-1/2 relative group shrink-0">
-          <div class="absolute inset-0 bg-sangre-viva -translate-x-2 translate-y-2 -z-10"></div>
-          <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
-            <Image 
-              src={johanPhoto} 
-              alt={t(lang, 'guardians.johanAlt')} 
-              class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
+    <!-- BIOGRAPHY 2: THE SACRED MANTLE (JOHAN) -->
+    <div
+      class="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-16"
+    >
+      <!-- Image Block -->
+      <div class="w-full md:w-1/2 relative group shrink-0">
+        <div
+          class="absolute inset-0 bg-sangre-viva -translate-x-2 translate-y-2 -z-10"
+        >
         </div>
-      <div class="w-full md:w-1/2 space-y-4">
-    <span class="font-title text-sm text-padre-sol tracking-widest uppercase">{t(lang, 'guardians.mantleEyebrow')}</span>
-    <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.johanName')}</h3>
-    
-    <p class="font-body text-fibra-natural/80 leading-relaxed text-lg">
-      {t(lang, 'guardians.johanBody1')} 
-    </p>
-    
-    <p class="font-body text-fibra-natural/70 leading-relaxed text-base pt-2">
-      {t(lang, 'guardians.johanBody2')}
-    </p>
-  </div>
+        <div
+          class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden"
+        >
+          <Image
+            src={johanPhoto}
+            alt={t(lang, "guardians.johanAlt")}
+            class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale group-hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
       </div>
 
-      <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-        <div class="w-full md:w-1/2 relative group shrink-0">
-          <div class="absolute inset-0 bg-padre-sol translate-x-2 translate-y-2 -z-10"></div>
-          <div class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden">
-            <Image 
-              src={jasperPhoto} 
-              alt={t(lang, 'guardians.jasperAlt')} 
-              class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
-        </div>
-        <div class="w-full md:w-1/2 space-y-4">
-          <span class="font-title text-sm text-agua-pura tracking-widest uppercase">{t(lang, 'guardians.bridgeEyebrow')}</span>
-          <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide">{t(lang, 'guardians.jasperTitle')}</h3>
-          <p class="font-body text-fibra-natural/80 leading-relaxed text-lg">
-            {t(lang, 'guardians.jasperBody')}
+      <!-- Text Block -->
+      <div class="w-full md:w-1/2 space-y-4">
+        <span
+          class="font-title text-sm text-sangre-viva tracking-widest uppercase block"
+        >
+          {t(lang, "guardians.mantleEyebrow")}
+        </span>
+        <h3
+          class="font-title text-3xl md:text-4xl text-fibra-natural uppercase tracking-wide"
+        >
+          {t(lang, "guardians.johanName")}
+        </h3>
+        <div
+          class="space-y-4 font-body text-fibra-natural/80 leading-relaxed text-lg pt-2"
+        >
+          <p>{t(lang, "guardians.johanBody1")}</p>
+          <p class="text-base text-fibra-natural/70">
+            {t(lang, "guardians.johanBody2")}
           </p>
         </div>
       </div>
+    </div>
 
+    <!-- BIOGRAPHY 3: THE BRIDGE (JASPER) -->
+    <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+      <!-- Image Block -->
+      <div class="w-full md:w-1/2 relative group shrink-0">
+        <div
+          class="absolute inset-0 bg-agua-pura translate-x-2 translate-y-2 -z-10"
+        >
+        </div>
+        <div
+          class="border-4 border-[#222] bg-[#111] aspect-[4/5] overflow-hidden"
+        >
+          <Image
+            src={jasperPhoto}
+            alt={t(lang, "guardians.jasperAlt")}
+            class="w-full h-full object-cover filter contrast-105 brightness-95 grayscale group-hover:grayscale-0 transition-all duration-500"
+          />
+        </div>
+      </div>
+
+      <!-- Text Block -->
+      <div class="w-full md:w-1/2 space-y-4">
+        <span
+          class="font-title text-sm text-agua-pura tracking-widest uppercase block"
+        >
+          {t(lang, "guardians.bridgeEyebrow")}
+        </span>
+        <h3
+          class="font-title text-3xl md:text-4xl text-fibra-natural uppercase tracking-wide"
+        >
+          {t(lang, "guardians.jasperTitle")}
+        </h3>
+        <p class="font-body text-fibra-natural/80 leading-relaxed text-lg pt-2">
+          {t(lang, "guardians.jasperBody")}
+        </p>
+      </div>
+    </div>
   </div>
 </section>
