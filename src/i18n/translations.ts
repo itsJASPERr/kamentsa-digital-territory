@@ -66,9 +66,9 @@ export const translations = {
       johanBody1: "Following the physical transition of his father in 2021, Johan Muchavisoy Jacanamijoy stepped forward to carry the spiritual mantle and operational future of our lineage. Walking directly in the footsteps of Taita Miguel, he serves as a dedicated guardian of sacred medicine and traditional Kamëntsá cosmovision.",
       johanBody2: "Today, he anchors the family's minga, transforming ancestral wisdom into the physical reality of our communal Tambo. For him, leading this initiative is a living extension of the medicine itself—an open invitation ensuring that all global allies are received genuinely as Kabunga (one of us).",
       bridgeEyebrow: "The Bridge",
-      jasperTitle: "Jasper's Commitment",
+      jasperTitle: "Jasper • Famiy Fried",
       jasperAlt: "Portrait of Jasper",
-      jasperBody: "Acting as a logistical link between global allies and local traditions, Jasper translates the deep realities of the Sibundoy valley into structured technical milestones. His presence ensures administrative safety and execution clarity across all construction stages.",
+      jasperBody: "Acting as a logistical link between global allies and local traditions, Jasper translates the deep realities of the Sibundoy valley into structured communication. A close friend of the family acting as a digital and relational bridge. Jasper helps bring this project to life by shaping digital communication and fostering real-life connections, dedicated entirely to honoring and maintaining the family's authentic message.",
     },
     
     // Blueprint Section
@@ -205,9 +205,9 @@ export const translations = {
       johanBody1: "Tras el tránsito físico de su padre en 2021, Johan Muchavisoy Jacanamijoy dio un paso al frente para sostener el manto espiritual y el futuro operativo de nuestro linaje. Caminando directamente sobre las huellas del Taita Miguel, hoy sirve como guardián dedicado de la medicina sagrada y de la cosmovisión tradicional Kamëntsá.",
       johanBody2: "Hoy, él ancla la minga de la familia, transformando la sabiduría ancestral en la realidad física de nuestro Tambo comunitario. Para él, liderar esta iniciativa es una extensión viva de la medicina misma: una invitación abierta que garantiza que todos los aliados globales sean recibidos genuinamente como Kabunga (uno de nosotros).",
       bridgeEyebrow: "El Puente",
-      jasperTitle: "Compromiso de Jasper",
+      jasperTitle: "Jasper • Amigo de la Familia",
       jasperAlt: "Retrato de Jasper",
-      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en hitos técnicos estructurados. His presence garantiza seguridad administrativa y claridad de ejecución en todas las etapas de construcción.",
+      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en comunicación estructurada. Un amigo cercano de la familia que actúa como un puente digital y relacional. Jasper ayuda a hacer realidad este proyecto creando canales de comunicación digital y lazos en la vida real, dedicado enteramente a mantener y proteger el mensaje auténtico de la familia.",
     },
     
     // Blueprint Section
