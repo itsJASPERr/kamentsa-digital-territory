@@ -1,8 +1,10 @@
 import { translations, type Language } from './translations';
 
+export type { Language } from './translations';
+
 export function getLanguageFromPath(pathname: string): Language {
   const match = pathname.match(/\/(en|es)(?:\/|$)/);
-  return (match?.[1] as Language) || 'en';
+  return (match?.[1] as Language) || 'es';
 }
 
 export function t(lang: Language, key: string): any {
@@ -38,7 +40,7 @@ export function getAlternateLanguageUrl(currentPath: string, targetLang: Languag
   const langIndex = segments.findIndex((segment) => isValidLanguage(segment));
 
   if (langIndex >= 0) {
-    if (targetLang === 'en') {
+    if (targetLang === 'es') {
       segments.splice(langIndex, 1);
     } else {
       segments[langIndex] = targetLang;
@@ -47,7 +49,7 @@ export function getAlternateLanguageUrl(currentPath: string, targetLang: Languag
     return segments.length > 0 ? `/${segments.join('/')}/` : '/';
   }
 
-  if (targetLang === 'en') {
+  if (targetLang === 'es') {
     return normalizedPath;
   }
 
