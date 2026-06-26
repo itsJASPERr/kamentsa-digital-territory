@@ -1,0 +1,43 @@
+---
+import { t, type Language } from '../i18n/utils';
+import type { LoomProduct } from '../data/loomProducts';
+
+interface Props {
+  craft: LoomProduct;
+  lang: Language;
+}
+
+const { craft, lang } = Astro.props;
+---
+
+<article class="bg-sombra-selva border-4 border-[#222] hover:border-agua-pura hover:shadow-[8px_8px_0_#00d2d3] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
+  <!-- TODO: Card media block - replace external image URLs with local optimized assets -->
+  <div class="relative overflow-hidden aspect-square border-b-4 border-padre-sol">
+    <img
+      src={craft.img}
+      alt={craft.name}
+      class="w-full h-full object-cover filter grayscale contrast-115 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
+    />
+    <div class="absolute top-4 left-4 bg-tierra-madre px-3 py-1.5 border-2 border-sangre-viva text-xs font-title font-bold uppercase text-sangre-viva tracking-wider shadow-[3px_3px_0_#111]">
+      {craft.symbolism}
+    </div>
+  </div>
+
+  <!-- TODO: Card body block - verify pricing, symbolism tags, and CTA behavior -->
+  <div class="p-6 flex flex-col flex-grow">
+    <h3 class="font-title text-xl uppercase text-fibra-natural mb-3 tracking-wide">{craft.name}</h3>
+    <p class="text-sm text-fibra-natural/70 font-body flex-grow mb-8 leading-relaxed">
+      {craft.desc}
+    </p>
+
+    <div class="flex flex-col gap-3 mt-auto pt-4 border-t-2 border-[#333] lg:flex-row lg:items-center lg:justify-between">
+      <span class="text-2xl font-title text-agua-pura">${craft.price}</span>
+      <a
+        href={craft.checkoutUrl}
+        class="w-full text-center bg-transparent text-padre-sol border-2 border-padre-sol px-4 py-2 font-title uppercase text-sm hover:bg-padre-sol hover:text-tierra-madre hover:shadow-[4px_4px_0_#f6007b] transition-all duration-300 lg:w-auto"
+      >
+        {t(lang, 'loom.claimReward')}
+      </a>
+    </div>
+  </div>
+</article>

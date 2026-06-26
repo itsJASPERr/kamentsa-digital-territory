@@ -1,5 +1,7 @@
 import { translations, type Language } from './translations';
 
+export type { Language } from './translations';
+
 export function getLanguageFromPath(pathname: string): Language {
   const match = pathname.match(/\/(en|es)(?:\/|$)/);
   return (match?.[1] as Language) || 'en';

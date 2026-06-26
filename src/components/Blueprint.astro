@@ -1,7 +1,6 @@
 ---
-// Section 4: The Blueprint of Kabunga
+// This component requires the lang prop to handle translations
 import { t, type Language } from '../i18n/utils';
-import DonationProgress from './DonationProgress.astro';
 
 interface Props {
   lang: Language;
@@ -10,77 +9,75 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<section id="blueprint" class="bg-[#111] py-24 px-[5%] md:px-[10%] relative faja-divider">
-  <div class="max-w-7xl mx-auto">
+<section id="blueprint" class="bg-[#111] py-32 px-[5%] md:px-[10%] relative faja-divider border-t border-fibra-natural/10">
+  <div class="max-w-6xl mx-auto space-y-16">
     
-    <div class="text-center mb-20">
-      <h2 class="font-title text-4xl sm:text-5xl md:text-6xl text-padre-sol uppercase tracking-wide drop-shadow-[2px_2px_0_#f6007b] mb-10">
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="font-title text-sm text-padre-sol tracking-widest uppercase block animate-pulse">
+        {t(lang, 'blueprint.currentGoal')}
+      </span>
+      <h2 class="font-title text-4xl md:text-5xl text-fibra-natural uppercase tracking-wide">
         {t(lang, 'blueprint.title')}
       </h2>
-
-      <DonationProgress
-        title={t(lang, 'blueprint.currentGoal')}
-        progressLabel="35%"
-        footerText={t(lang, 'blueprint.fundingMessage')}
-        wrapperClass="max-w-3xl mx-auto"
-      />
+      <p class="font-body text-fibra-natural/60 text-lg">
+        {t(lang, 'blueprint.fundingMessage')}
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-8 items-stretch mt-12">
+    <!-- THE STAGES LAYOUT -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-8">
       
-      <div class="bg-sombra-selva border-4 border-sangre-viva shadow-[8px_8px_0_rgba(246,0,123,0.4)] hover:shadow-[8px_8px_0_rgba(246,0,123,0.9)] hover:translate-y-[-4px] transition-all duration-300 p-8 flex flex-col relative">
-        <div class="absolute -top-8 -left-4 font-title text-7xl text-sangre-viva drop-shadow-[3px_3px_0_#0c0c0c] select-none">01</div>
-        <h3 class="font-title text-2xl text-fibra-natural uppercase tracking-wider mb-6 mt-4">{t(lang, 'blueprint.stage1Title')}</h3>
-        <ul class="text-fibra-natural/80 font-body space-y-5 flex-grow text-base md:text-lg">
-          <li class="flex items-start gap-3">
-            <span class="text-sangre-viva mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage1Item1')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-sangre-viva mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage1Item2')}</span>
-          </li>
-        </ul>
+      <!-- STAGE 1: ACTIVE -->
+      <div class="border-2 border-padre-sol bg-[#111] p-8 flex flex-col justify-between relative group">
+        <div class="absolute top-0 right-0 bg-padre-sol text-[#0c0c0c] font-title text-xs uppercase tracking-widest px-4 py-1 font-bold">
+          Active Phase
+        </div>
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <span class="font-title text-xs text-padre-sol uppercase tracking-widest block">Phase 01</span>
+            <h3 class="font-title text-2xl text-fibra-natural uppercase tracking-wide">{t(lang, 'blueprint.stage1Title')}</h3>
+          </div>
+          <ul class="space-y-4 font-body text-fibra-natural/80 text-base leading-relaxed [&>li]:relative [&>li]:before:content-['▸'] [&>li]:before:absolute [&>li]:before:left-[-1em] [&>li]:before:select-none [&>li]:before:text-padre-sol">
+            <li class="pt-2">
+              {t(lang, 'blueprint.stage1Item1')}
+            </li>
+            <li class="pt-4">{t(lang, 'blueprint.stage1Item2')}</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="bg-sombra-selva border-4 border-padre-sol shadow-[8px_8px_0_rgba(243,156,18,0.2)] hover:shadow-[8px_8px_0_rgba(243,156,18,0.9)] hover:translate-y-[-4px] transition-all duration-300 p-8 flex flex-col relative mt-8 md:mt-0 opacity-80 hover:opacity-100">
-        <div class="absolute -top-8 -left-4 font-title text-7xl text-padre-sol drop-shadow-[3px_3px_0_#0c0c0c] select-none">02</div>
-        <h3 class="font-title text-2xl text-fibra-natural uppercase tracking-wider mb-6 mt-4">{t(lang, 'blueprint.stage2Title')}</h3>
-        <ul class="text-fibra-natural/80 font-body space-y-5 flex-grow text-base md:text-lg">
-          <li class="flex items-start gap-3">
-            <span class="text-padre-sol mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage2Item1')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-padre-sol mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage2Item2')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-padre-sol mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage2Item3')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-padre-sol mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage2Item4')}</span>
-          </li>
-        </ul>
+      <!-- STAGE 2: FUTURE -->
+      <div class="border border-fibra-natural/10 bg-[#111]/40 p-8 flex flex-col justify-between relative opacity-80 hover:opacity-100 transition-opacity duration-300">
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <span class="font-title text-xs text-sangre-viva uppercase tracking-widest block">Phase 02</span>
+            <h3 class="font-title text-2xl text-fibra-natural uppercase tracking-wide">{t(lang, 'blueprint.stage2Title')}</h3>
+          </div>
+          <ul class="space-y-4 font-body text-fibra-natural/70 text-base leading-relaxed [&>li]:relative [&>li]:before:content-['▸'] [&>li]:before:absolute [&>li]:before:left-[-1em] [&>li]:before:select-none [&>li]:before:text-sangre-viva">
+            <li class="pt-2">{t(lang, 'blueprint.stage2Item1')}</li>
+            <li class="pt-4">{t(lang, 'blueprint.stage2Item2')}</li>
+            <li class="pt-4">{t(lang, 'blueprint.stage2Item3')}</li>
+            <li class="pt-4">{t(lang, 'blueprint.stage2Item4')}</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="bg-sombra-selva border-4 border-agua-pura shadow-[8px_8px_0_rgba(0,210,211,0.2)] hover:shadow-[8px_8px_0_rgba(0,210,211,0.9)] hover:translate-y-[-4px] transition-all duration-300 p-8 flex flex-col relative mt-8 md:mt-0 opacity-70 hover:opacity-100">
-        <div class="absolute -top-8 -left-4 font-title text-7xl text-agua-pura drop-shadow-[3px_3px_0_#0c0c0c] select-none">03</div>
-        <h3 class="font-title text-2xl text-fibra-natural uppercase tracking-wider mb-6 mt-4">{t(lang, 'blueprint.stage3Title')}</h3>
-        <ul class="text-fibra-natural/80 font-body space-y-5 flex-grow text-base md:text-lg">
-          <li class="flex items-start gap-3">
-            <span class="text-agua-pura mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage3Item1')}</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-agua-pura mt-1 select-none">▸</span>
-            <span>{t(lang, 'blueprint.stage3Item2')}</span>
-          </li>
-        </ul>
+      <!-- STAGE 3: FUTURE -->
+      <div class="border border-fibra-natural/10 bg-[#111]/40 p-8 flex flex-col justify-between relative opacity-80 hover:opacity-100 transition-opacity duration-300">
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <span class="font-title text-xs text-agua-pura uppercase tracking-widest block">Phase 03</span>
+            <h3 class="font-title text-2xl text-fibra-natural uppercase tracking-wide">{t(lang, 'blueprint.stage3Title')}</h3>
+          </div>
+          <ul class="space-y-4 font-body text-fibra-natural/70 text-base leading-relaxed [&>li]:relative [&>li]:before:content-['▸'] [&>li]:before:absolute [&>li]:before:left-[-1em] [&>li]:before:select-none [&>li]:before:text-agua-pura">
+            <li class="pt-2">{t(lang, 'blueprint.stage3Item1')}</li>
+            <li class="pt-4">{t(lang, 'blueprint.stage3Item2')}</li>
+          </ul>
+        </div>
       </div>
 
     </div>
+
   </div>
 </section>
