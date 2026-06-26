@@ -1,0 +1,109 @@
+---
+import { t, type Language } from '../i18n/utils';
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="financial-flow" class="bg-[#0c0c0c] py-32 px-[5%] md:px-[10%] relative border-t border-fibra-natural/10">
+  <div class="max-w-5xl mx-auto space-y-16">
+    
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+      <span class="font-title text-sm text-sangre-viva tracking-widest uppercase block">
+        {t(lang, 'financial.title')}
+      </span>
+      <h2 class="font-title text-4xl md:text-5xl text-fibra-natural uppercase tracking-wide">
+        {t(lang, 'financial.subtitle')}
+      </h2>
+    </div>
+
+    <!-- FLOW STEPS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      
+      <!-- STEP 1 -->
+      <div class="border border-fibra-natural/10 bg-[#111]/20 p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-title text-xs text-fibra-natural/40 uppercase tracking-widest">Step 01</span>
+            <span class="font-body text-xs text-sangre-viva px-2 py-0.5 border border-sangre-viva/30 uppercase rounded-sm">Fee: ~2.9% + €0.30</span>
+          </div>
+          <h3 class="font-title text-xl text-fibra-natural uppercase tracking-wider">
+            {t(lang, 'financial.stage1Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/70 text-base leading-relaxed">
+            {t(lang, 'financial.stage1Body')}
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="border border-fibra-natural/10 bg-[#111]/20 p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-title text-xs text-fibra-natural/40 uppercase tracking-widest">Step 02</span>
+            <span class="font-body text-xs text-agua-pura px-2 py-0.5 border border-agua-pura/30 uppercase rounded-sm">Platform Fee: 1.5%</span>
+          </div>
+          <h3 class="font-title text-xl text-fibra-natural uppercase tracking-wider">
+            {t(lang, 'financial.stage2Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/70 text-base leading-relaxed">
+            {t(lang, 'financial.stage2Body')}
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="border border-fibra-natural/10 bg-[#111]/20 p-8 flex flex-col justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-title text-xs text-fibra-natural/40 uppercase tracking-widest">Step 03</span>
+            <span class="font-body text-xs text-padre-sol px-2 py-0.5 border border-padre-sol/30 uppercase rounded-sm">Batch Cost: ~1-2%</span>
+          </div>
+          <h3 class="font-title text-xl text-fibra-natural uppercase tracking-wider">
+            {t(lang, 'financial.stage3Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/70 text-base leading-relaxed">
+            {t(lang, 'financial.stage3Body')}
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="border-2 border-padre-sol bg-[#111]/40 p-8 flex flex-col justify-between space-y-6 relative">
+        <div class="space-y-4">
+          <div class="flex justify-between items-start">
+            <span class="font-title text-xs text-padre-sol uppercase tracking-widest font-bold">Step 04</span>
+            <span class="font-body text-xs text-padre-sol px-2 py-0.5 border border-padre-sol/50 uppercase rounded-sm font-semibold">Sovereignty</span>
+          </div>
+          <h3 class="font-title text-xl text-fibra-natural uppercase tracking-wider">
+            {t(lang, 'financial.stage4Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/90 text-base leading-relaxed">
+            {t(lang, 'financial.stage4Body')}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SOVEREIGNTY & TERMS AGREEMENT BLOCK -->
+    <div class="max-w-3xl mx-auto p-8 border border-fibra-natural/10 bg-[#111]/40 space-y-4">
+      <h4 class="font-title text-xs text-padre-sol tracking-widest uppercase font-bold">
+        {t(lang, 'financial.disclaimerTitle')}
+      </h4>
+      <div class="font-body text-base text-fibra-natural/80 leading-relaxed space-y-4">
+        <p>
+          {t(lang, 'financial.disclaimerBody1')}
+        </p>
+        <p class="text-sm text-fibra-natural/60 italic border-l border-padre-sol/30 pl-4">
+          {t(lang, 'financial.disclaimerBody2')}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
