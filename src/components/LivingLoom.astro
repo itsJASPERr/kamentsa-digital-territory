@@ -1,100 +1,84 @@
 ---
-// Section 5: The Living Loom (Artisan Rewards)
+// This component requires the lang prop to handle translations
 import { t, type Language } from '../i18n/utils';
+import { loomProducts } from '../data/loomProducts';
+import LoomProductCard from './LoomProductCard.astro';
 
 interface Props {
   lang: Language;
 }
 
 const { lang } = Astro.props;
-
-const crafts = [
-  { 
-    id: "item-01",
-    name: "The Hummingbird Chumbe", 
-    price: "45.00", 
-    symbolism: "Messenger of the Word",
-    desc: "The hummingbird carries words between the ancestors and the earth. It guards the sacred Borrachero tree. Hand-woven using traditional fibers.", 
-    img: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=600&q=80", // Placeholder for weaving/beads
-    checkoutUrl: "#" 
-  },
-  { 
-    id: "item-02",
-    name: "Sacred Turtle Carving", 
-    price: "85.00", 
-    symbolism: "Inner Strength & Protection",
-    desc: "Carved from fallen native wood—we never harm the trees. The turtle reminds us to walk our spiritual path slowly, leaving a firm footprint.", 
-    img: "https://images.unsplash.com/photo-1610959063231-1e9a2ebfb81b?auto=format&fit=crop&w=600&q=80", // Placeholder for carved wood
-    checkoutUrl: "#"
-  },
-  { 
-    id: "item-03",
-    name: "The Frog Motif", 
-    price: "60.00", 
-    symbolism: "Fertility & The Chagra",
-    desc: "Represents the Chagra (agricultural school of life) and the traditional medicine lines maintained within the community.", 
-    img: "https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=600&q=80", // Placeholder for green texture/beads
-    checkoutUrl: "#"
-  },
-  { 
-    id: "item-04",
-    name: "Ancestral Seed Necklace", 
-    price: "35.00", 
-    symbolism: "Respectful Harmony",
-    desc: "We wait for the seeds to fall naturally. When the tree drops them, it means they are a gift for us to turn into instruments or art.", 
-    img: "https://images.unsplash.com/photo-1599643478524-fb66f8510ad6?auto=format&fit=crop&w=600&q=80", // Placeholder for seeds/jewelry
-    checkoutUrl: "#"
-  }
-];
 ---
 
-<section id="loom" class="bg-tierra-madre py-24 px-[5%] md:px-[10%] relative faja-divider">
-  <div class="max-w-7xl mx-auto">
+<section id="loom" class="bg-[#0c0c0c] py-32 px-[5%] md:px-[10%] relative border-t border-fibra-natural/10 overflow-hidden faja-divider">
+  <!-- TODO: Finalize Living Loom section spacing and responsive breakpoints -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
     
-    <div class="max-w-4xl mx-auto text-center mb-16">
-      <h2 class="font-title text-4xl sm:text-5xl md:text-6xl text-sangre-viva uppercase tracking-wide mb-8 drop-shadow-[2px_2px_0_#111]">
-        {t(lang, 'loom.title')}
-      </h2>
-      <p class="text-fibra-natural/90 font-body text-lg md:text-xl leading-relaxed">
-        {t(lang, 'loom.intro')}
-      </p>
+    <!-- TODO: Left side - conceptual textile frame content/art direction -->
+    <div class="lg:col-span-5 relative group order-last lg:order-first">
+      <!-- Gold Padre Sol solid offset background panel -->
+      <div class="absolute inset-0 bg-padre-sol translate-x-3 translate-y-3 -z-10 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 duration-300"></div>
+      
+      <div class="border-4 border-[#222] bg-[#111] aspect-square relative overflow-hidden flex items-center justify-center p-8 select-none">
+        <!-- Structural Loom Line Simulation (Pure CSS Accents) -->
+        <div class="absolute inset-0 flex justify-between px-8 opacity-20 pointer-events-none" aria-hidden="true">
+          {[...Array(10)].map(() => (
+            <div class="w-[1px] h-full bg-gradient-to-b from-transparent via-fibra-natural to-transparent"></div>
+          ))}
+        </div>
+        
+        <!-- Center Motif Label -->
+        <div class="relative text-center z-10 space-y-3">
+          <span class="font-title text-xs text-padre-sol tracking-widest uppercase block">
+            Kamëntsá Katsa • Këshwá
+          </span>
+          <p class="font-title text-fibra-natural text-lg tracking-wider uppercase max-w-xs mx-auto leading-relaxed">
+            Tejiendo la historia del territorio
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
-      {crafts.map((craft) => (
-        <div class="bg-sombra-selva border-4 border-[#222] hover:border-agua-pura hover:shadow-[8px_8px_0_#00d2d3] hover:-translate-y-2 transition-all duration-300 flex flex-col h-full group">
-          
-          <div class="relative overflow-hidden aspect-square border-b-4 border-padre-sol">
-            <img 
-              src={craft.img} 
-              alt={craft.name} 
-              class="w-full h-full object-cover filter grayscale contrast-115 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" 
-            />
-            <div class="absolute top-4 left-4 bg-tierra-madre px-3 py-1.5 border-2 border-sangre-viva text-xs font-title font-bold uppercase text-sangre-viva tracking-wider shadow-[3px_3px_0_#111]">
-              {craft.symbolism}
-            </div>
-          </div>
-          
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="font-title text-xl uppercase text-fibra-natural mb-3 tracking-wide">{craft.name}</h3>
-            <p class="text-sm text-fibra-natural/70 font-body flex-grow mb-8 leading-relaxed">
-              {craft.desc}
-            </p>
-            
-            <div class="flex flex-col gap-3 mt-auto pt-4 border-t-2 border-[#333] lg:flex-row lg:items-center lg:justify-between">
-              <span class="text-2xl font-title text-agua-pura">${craft.price}</span>
-              <a 
-                href={craft.checkoutUrl}
-                class="w-full text-center bg-transparent text-padre-sol border-2 border-padre-sol px-4 py-2 font-title uppercase text-sm hover:bg-padre-sol hover:text-tierra-madre hover:shadow-[4px_4px_0_#f6007b] transition-all duration-300 lg:w-auto"
-              >
-                {t(lang, 'loom.claimReward')}
-              </a>
-            </div>
-          </div>
+    <!-- TODO: Right side - editorial statement and CTA copy review -->
+    <div class="lg:col-span-7 space-y-8">
+      <div class="space-y-2">
+        <span class="font-title text-sm text-sangre-viva tracking-widest uppercase block">
+          {t(lang, 'nav.loom')}
+        </span>
+        <h2 class="font-title text-4xl md:text-5xl text-fibra-natural uppercase tracking-wide">
+          {t(lang, 'loom.title')}
+        </h2>
+      </div>
 
-        </div>
-      ))}
+      <!-- Left-bordered high impact editorial block for the core quote -->
+      <div class="relative pl-6 md:pl-8 border-l-2 border-padre-sol py-2">
+        <p class="font-body text-xl md:text-2xl text-fibra-natural/95 italic leading-relaxed tracking-wide">
+          {t(lang, 'loom.intro')}
+        </p>
+      </div>
+
+      <!-- Action Navigation Button -->
+      <div class="pt-4">
+        <a 
+          href="#shop" 
+          class="inline-block px-8 py-4 border border-fibra-natural/30 text-fibra-natural font-title text-sm tracking-widest uppercase hover:bg-fibra-natural hover:text-[#0c0c0c] transition-all duration-300"
+        >
+          {t(lang, 'nav.artisanShop')}
+        </a>
+      </div>
     </div>
 
   </div>
+
+  {/* TODO: Product cards grid temporarily disabled */}
+  {/*
+  <div class="max-w-6xl mx-auto mt-16 md:mt-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+      {loomProducts.map((craft) => (
+        <LoomProductCard craft={craft} lang={lang} />
+      ))}
+    </div>
+  </div>
+  */}
 </section>

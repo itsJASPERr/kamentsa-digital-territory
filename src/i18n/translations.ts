@@ -66,9 +66,9 @@ export const translations = {
       johanBody1: "Following the physical transition of his father in 2021, Johan Muchavisoy Jacanamijoy stepped forward to carry the spiritual mantle and operational future of our lineage. Walking directly in the footsteps of Taita Miguel, he serves as a dedicated guardian of sacred medicine and traditional Kamëntsá cosmovision.",
       johanBody2: "Today, he anchors the family's minga, transforming ancestral wisdom into the physical reality of our communal Tambo. For him, leading this initiative is a living extension of the medicine itself—an open invitation ensuring that all global allies are received genuinely as Kabunga (one of us).",
       bridgeEyebrow: "The Bridge",
-      jasperTitle: "Jasper's Commitment",
+      jasperTitle: "Jasper • Famiy Fried",
       jasperAlt: "Portrait of Jasper",
-      jasperBody: "Acting as a logistical link between global allies and local traditions, Jasper translates the deep realities of the Sibundoy valley into structured technical milestones. His presence ensures administrative safety and execution clarity across all construction stages.",
+      jasperBody: "Acting as a logistical link between global allies and local traditions, Jasper translates the deep realities of the Sibundoy valley into structured communication. A close friend of the family acting as a digital and relational bridge. Jasper helps bring this project to life by shaping digital communication and fostering real-life connections, dedicated entirely to honoring and maintaining the family's authentic message.",
     },
     
     // Blueprint Section
@@ -129,7 +129,24 @@ export const translations = {
     // Modal
     modal: {
       title: "Make an Offering",
-      subtitle: "Your contribution fuels the preservation of ancestral memory.",
+      subtitle: "Your support directly safeguards the sacred heritage and structural presence of the Muchavisoy family.",
+    },
+
+    // Financial Flow
+    financial: {
+      title: "Radical Transparency",
+      subtitle: "How Your Offering of Reciprocity Travels",
+      stage1Title: "1. The Intention (Donor to Platform)",
+      stage1Body: "When you contribute through our portal, your donation is initially processed securely by Donorbox and its underlying card processors (Stripe or PayPal). They automatically deduct standard transaction processing fees.",
+      stage2Title: "2. The Safe Haven (Platform to Europe)",
+      stage2Body: "Because major payment platforms cannot deposit funds directly into Colombian bank accounts due to local banking restrictions, the net funds are automatically cleared from the platform directly into Jasper's European bank account (Germany/Belgium). Jasper acts as our trusted family friend and digital bridge, holding 100% of these project resources in safe custody.",
+      stage3Title: "3. The Global Exchange (Europe to Colombia)",
+      stage3Body: "To minimize international wire fees, funds are held securely in Europe and transferred to Colombia in large, optimized batches using direct exchange services like Wise. This method guarantees the family receives the highest possible conversion rate from Euros to Colombian Pesos (COP).",
+      stage4Title: "4. Territory Sovereignty (The Family Direct)",
+      stage4Body: "Once our safe custody account in Europe reaches our batch minimum, the funds are cleared directly to the family's account in Colombia. While the sole intention of these campaigns is to manifest the physical projects communicated here, the family retains absolute, uncompromised sovereignty to deploy these resources wherever they feel it is most urgently needed in the moment.",
+      disclaimerTitle: "The Pact of Trust & Non-Refundability",
+      disclaimerBody1: "By making an offering of reciprocity to this project, you enter a circle of absolute trust. Because these funds are immediately transferred internationally and transformed directly into materials for the territory or community support, every offering is final and completely non-refundable.",
+      disclaimerBody2: "We do not view indigenous families as corporate contractors; we honor and support their ancestral wisdom to distribute these resources with the fluidity that life and the territory demand at any given moment.",
     },
     
     // Language
@@ -205,9 +222,9 @@ export const translations = {
       johanBody1: "Tras el tránsito físico de su padre en 2021, Johan Muchavisoy Jacanamijoy dio un paso al frente para sostener el manto espiritual y el futuro operativo de nuestro linaje. Caminando directamente sobre las huellas del Taita Miguel, hoy sirve como guardián dedicado de la medicina sagrada y de la cosmovisión tradicional Kamëntsá.",
       johanBody2: "Hoy, él ancla la minga de la familia, transformando la sabiduría ancestral en la realidad física de nuestro Tambo comunitario. Para él, liderar esta iniciativa es una extensión viva de la medicina misma: una invitación abierta que garantiza que todos los aliados globales sean recibidos genuinamente como Kabunga (uno de nosotros).",
       bridgeEyebrow: "El Puente",
-      jasperTitle: "Compromiso de Jasper",
+      jasperTitle: "Jasper • Amigo de la Familia",
       jasperAlt: "Retrato de Jasper",
-      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en hitos técnicos estructurados. His presence garantiza seguridad administrativa y claridad de ejecución en todas las etapas de construcción.",
+      jasperBody: "Actuando como un enlace logístico entre aliados globales y tradiciones locales, Jasper traduce las realidades profundas del valle de Sibundoy en comunicación estructurada. Un amigo cercano de la familia que actúa como un puente digital y relacional. Jasper ayuda a hacer realidad este proyecto creando canales de comunicación digital y lazos en la vida real, dedicado enteramente a mantener y proteger el mensaje auténtico de la familia.",
     },
     
     // Blueprint Section
@@ -267,8 +284,25 @@ export const translations = {
     
     // Modal
     modal: {
-      title: "Hacer una Ofrenda",
-      subtitle: "Tu contribución impulsa la preservación de la memoria ancestral.",
+      title: "Realizar una Ofrenda",
+      subtitle: "Su apoyo salvaguarda directamente el legado sagrado y la presencia estructural de la familia Muchavisoy.",
+    },
+
+    // Financial Flow
+    financial: {
+      title: "Transparencia Radical",
+      subtitle: "El Camino de su Ofrenda de Reciprocidad",
+      stage1Title: "1. La Intención (Del Donante a la Plataforma)",
+      stage1Body: "Cuando contribuyes a través de nuestro portal, tu donación es procesada inicialmente de forma segura por Donorbox y sus procesadores de tarjetas (Stripe o PayPal). Ellos deducen automáticamente las tarifas estándar de procesamiento de transacciones.",
+      stage2Title: "2. El Refugio Seguro (De la Plataforma a Europa)",
+      stage2Body: "Debido a que las principales plataformas de pago no pueden depositar fondos directamente en cuentas bancarias colombianas por restricciones bancarias locales, los fondos netos se transfieren directamente a la cuenta bancaria europea de Jasper (Alemania/Bélgica). Jasper actúa como nuestro amigo cercano y puente digital, manteniendo el 100% de estos recursos en custodia segura.",
+      stage3Title: "3. El Intercambio Global (De Europa a Colombia)",
+      stage3Body: "Para minimizar las comisiones por transferencias internacionales, los fondos se resguardan de forma segura en Europa y se envían a Colombia en lotes grandes y optimizados a través de servicios de cambio directo como Wise. Este método garantiza que la familia reciba la tasa de conversión más alta posible de Euros a Pesos Colombianos (COP).",
+      stage4Title: "4. Soberanía Territorial (Directo a la Familia)",
+      stage4Body: "Una vez que nuestra cuenta de custodia en Europa alcanza el mínimo por lote, los fondos se transfieren directamente a la cuenta de la familia en Colombia. Aunque la única intención de estas campañas es manifestar los proyectos físicos aquí comunicados, la familia conserva la soberanía absoluta e incomprometible de desplegar estos recursos donde sientan que se necesita con mayor urgencia en el momento.",
+      disclaimerTitle: "El Pacto de Confianza y No Reembolsabilidad",
+      disclaimerBody1: "Al hacer una ofrenda de reciprocidad a este proyecto, entras a un círculo de confianza absoluta. Debido a que estos fondos se transfieren internacionalmente de forma inmediata y se transforman directamente en materiales para el territorio o sustento comunitario, cada ofrenda es definitiva y completamente no reembolsable.",
+      disclaimerBody2: "No vemos a las familias indígenas como contratistas corporativos; honramos y respaldamos su sabiduría ancestral para distribuir estos recursos con la fluidez que la vida y el territorio exijan en cada momento.",
     },
     
     // Language

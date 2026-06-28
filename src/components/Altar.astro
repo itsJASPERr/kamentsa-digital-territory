@@ -1,67 +1,98 @@
 ---
+// This component requires the lang prop to handle translations
 import { t, type Language } from '../i18n/utils';
-import DonationProgress from './DonationProgress.astro';
 
 interface Props {
   lang: Language;
 }
 
 const { lang } = Astro.props;
-// Section 6: The Altar of Offerings (Fundraising Hub)
-// Integrate this at the top of the section for maximum impact.
 ---
 
-<section id="altar" class="bg-[#111] py-24 px-[5%] md:px-[10%] relative border-t-8 border-padre-sol">
-  <div class="max-w-4xl mx-auto">
-
-    <DonationProgress
-      title={t(lang, 'altar.progress')}
-      progressLabel="35%"
-      footerText={t(lang, 'altar.fundingStatus')}
-      wrapperClass="mb-16 p-8"
-      titleClass="font-title text-2xl text-agua-pura uppercase tracking-wider mb-6 text-center"
-      footerClass="text-center text-fibra-natural/60 text-sm mt-4 font-body uppercase tracking-widest"
-    />
-
-    <div class="text-center">
-      <h2 class="font-title text-4xl sm:text-5xl text-agua-pura uppercase tracking-wider mb-8">
+<section id="altar" class="bg-[#111] py-32 px-[5%] md:px-[10%] relative border-t border-fibra-natural/10 faja-divider">
+  <div class="max-w-5xl mx-auto space-y-16">
+    
+    <!-- HEADER -->
+    <div class="text-center max-w-3xl mx-auto space-y-6">
+      <span class="font-title text-sm text-agua-pura tracking-widest uppercase block">
+        {t(lang, 'altar.progress')}
+      </span>
+      <h2 class="font-title text-4xl md:text-5xl text-fibra-natural uppercase tracking-wide">
         {t(lang, 'altar.title')}
       </h2>
-      
-      <p class="text-fibra-natural/80 font-body text-lg md:text-xl leading-relaxed mb-12">
+      <p class="font-body text-fibra-natural/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
         {t(lang, 'altar.intro')}
       </p>
+    </div>
 
-      <div class="grid md:grid-cols-3 gap-6 mb-16">
-        <div class="border-2 border-sangre-viva p-6 bg-tierra-madre/20">
-          <h4 class="text-sangre-viva font-title text-lg mb-2">{t(lang, 'altar.tier1Title')}</h4>
-          <p class="text-fibra-natural/70 text-sm">{t(lang, 'altar.tier1Desc')}</p>
-        </div>
-        <div class="border-2 border-padre-sol p-6 bg-tierra-madre/20">
-          <h4 class="text-padre-sol font-title text-lg mb-2">{t(lang, 'altar.tier2Title')}</h4>
-          <p class="text-fibra-natural/70 text-sm">{t(lang, 'altar.tier2Desc')}</p>
-        </div>
-        <div class="border-2 border-agua-pura p-6 bg-tierra-madre/20">
-          <h4 class="text-agua-pura font-title text-lg mb-2">{t(lang, 'altar.tier3Title')}</h4>
-          <p class="text-fibra-natural/70 text-sm">{t(lang, 'altar.tier3Desc')}</p>
+    <!-- CROWDFUNDING TRACKER -->
+    <div class="bg-[#111] p-8 border border-fibra-natural/10 space-y-4 max-w-3xl mx-auto">
+      <div class="flex justify-between items-end font-title text-sm uppercase tracking-wider">
+        <span class="text-fibra-natural/60">{t(lang, 'altar.progress')}</span>
+        <span class="text-padre-sol font-bold">{t(lang, 'altar.fundingStatus')}</span>
+      </div>
+      <!-- Progress Bar Container -->
+      <div class="w-full bg-[#222] h-3 relative overflow-hidden">
+        <!-- 35% Progress Indicator -->
+        <div class="absolute top-0 left-0 bottom-0 bg-padre-sol w-[35%] transition-all duration-1000 ease-out"></div>
+      </div>
+    </div>
+
+    <!-- CONTRIBUTION TIERS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+      
+      <!-- Tier 1 -->
+      <div class="border border-fibra-natural/10 p-6 flex flex-col justify-between space-y-8 hover:border-agua-pura/30 transition-colors duration-300 bg-[#111]/20">
+        <div class="space-y-3">
+          <h3 class="font-title text-xl text-agua-pura uppercase tracking-wider">
+            {t(lang, 'altar.tier1Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/70 text-base leading-relaxed">
+            {t(lang, 'altar.tier1Desc')}
+          </p>
         </div>
       </div>
 
-      <div class="bg-sombra-selva p-10 shadow-[10px_10px_0_#f6007b]">
-        <p class="font-title text-2xl text-fibra-natural uppercase mb-8">{t(lang, 'altar.cta')}</p>
-        
-        <div class="min-h-[150px] flex items-center justify-center">
-          <button
-            id="altar-donate-btn"
-            type="button"
-            class="bg-padre-sol text-tierra-madre font-title text-xl uppercase px-10 py-4 border-2 border-padre-sol shadow-[6px_6px_0_#f6007b] hover:bg-sangre-viva hover:text-fibra-natural hover:border-sangre-viva hover:shadow-[6px_6px_0_#00d2d3] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all duration-300 select-none cursor-pointer"
-          >
-            {t(lang, 'nav.donateNow')}
-          </button>
+      <!-- Tier 2 -->
+      <div class="border border-fibra-natural/10 p-6 flex flex-col justify-between space-y-8 hover:border-sangre-viva/30 transition-colors duration-300 bg-[#111]/20">
+        <div class="space-y-3">
+          <h3 class="font-title text-xl text-sangre-viva uppercase tracking-wider">
+            {t(lang, 'altar.tier2Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/70 text-base leading-relaxed">
+            {t(lang, 'altar.tier2Desc')}
+          </p>
         </div>
       </div>
+
+      <!-- Tier 3 -->
+      <div class="border border-fibra-natural/10 p-6 flex flex-col justify-between space-y-8 hover:border-padre-sol/30 transition-colors duration-300 bg-[#111]/20">
+        <div class="space-y-3">
+          <h3 class="font-title text-xl text-padre-sol uppercase tracking-wider">
+            {t(lang, 'altar.tier3Title')}
+          </h3>
+          <p class="font-body text-fibra-natural/70 text-base leading-relaxed">
+            {t(lang, 'altar.tier3Desc')}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ACTION CALL -->
+    <div class="text-center pt-8">
+      <h4 class="font-title text-lg text-fibra-natural uppercase tracking-widest mb-6">
+        {t(lang, 'altar.cta')}
+      </h4>
+      <!-- Trigger button targetting your global project modal execution hooks -->
+      <button 
+        id="altar-donate-btn"
+        data-open-modal
+        class="px-12 py-5 bg-sangre-viva text-fibra-natural font-title text-sm tracking-widest uppercase hover:bg-red-700 transition-all duration-300 shadow-xl cursor-pointer"
+      >
+        {t(lang, 'nav.donateNow')}
+      </button>
     </div>
 
   </div>
 </section>
- 
