@@ -135,7 +135,7 @@ export const translations = {
     // Financial Flow
     financial: {
       title: "Radical Transparency",
-      subtitle: "How Your Medicine Money Travels",
+      subtitle: "How Your Offering of Reciprocity Travels",
       stage1Title: "1. The Intention (Donor to Platform)",
       stage1Body: "When you contribute through our portal, your donation is initially processed securely by Donorbox and its underlying card processors (Stripe or PayPal). They automatically deduct standard transaction processing fees.",
       stage2Title: "2. The Safe Haven (Platform to Europe)",
@@ -145,8 +145,8 @@ export const translations = {
       stage4Title: "4. Territory Sovereignty (The Family Direct)",
       stage4Body: "Once our safe custody account in Europe reaches our batch minimum, the funds are cleared directly to the family's account in Colombia. While the sole intention of these campaigns is to manifest the physical projects communicated here, the family retains absolute, uncompromised sovereignty to deploy these resources wherever they feel it is most urgently needed in the moment.",
       disclaimerTitle: "The Pact of Trust & Non-Refundability",
-      disclaimerBody1: "By offering medicine money to this project, you are stepping into a circle of absolute trust. Because these funds are immediately transferred across borders and converted directly into territory materials or local community support, all donations are final and completely non-refundable.",
-      disclaimerBody2: "We do not treat indigenous families as corporate contractors. We honor their wisdom to distribute these resources fluidly as life demands on the ground.",
+      disclaimerBody1: "By making an offering of reciprocity to this project, you enter a circle of absolute trust. Because these funds are immediately transferred internationally and transformed directly into materials for the territory or community support, every offering is final and completely non-refundable.",
+      disclaimerBody2: "We do not view indigenous families as corporate contractors; we honor and support their ancestral wisdom to distribute these resources with the fluidity that life and the territory demand at any given moment.",
     },
     
     // Language
@@ -291,7 +291,7 @@ export const translations = {
     // Financial Flow
     financial: {
       title: "Transparencia Radical",
-      subtitle: "El Camino de su Aporte",
+      subtitle: "El Camino de su Ofrenda de Reciprocidad",
       stage1Title: "1. La Intención (Del Donante a la Plataforma)",
       stage1Body: "Cuando contribuyes a través de nuestro portal, tu donación es procesada inicialmente de forma segura por Donorbox y sus procesadores de tarjetas (Stripe o PayPal). Ellos deducen automáticamente las tarifas estándar de procesamiento de transacciones.",
       stage2Title: "2. El Refugio Seguro (De la Plataforma a Europa)",
@@ -301,8 +301,8 @@ export const translations = {
       stage4Title: "4. Soberanía Territorial (Directo a la Familia)",
       stage4Body: "Una vez que nuestra cuenta de custodia en Europa alcanza el mínimo por lote, los fondos se transfieren directamente a la cuenta de la familia en Colombia. Aunque la única intención de estas campañas es manifestar los proyectos físicos aquí comunicados, la familia conserva la soberanía absoluta e incomprometible de desplegar estos recursos donde sientan que se necesita con mayor urgencia en el momento.",
       disclaimerTitle: "El Pacto de Confianza y No Reembolsabilidad",
-      disclaimerBody1: "Al ofrecer dinero de medicina a este proyecto, estás ingresando a un círculo de confianza absoluta. Debido a que estos fondos se transfieren inmediatamente a través de las fronteras y se convierten directamente en materiales para el territorio o apoyo comunitario local, todas las donaciones son definitivas y completamente no reembolsables.",
-      disclaimerBody2: "No tratamos a las familias indígenas como contratistas corporativos. Honramos su sabiduría para distribuir estos recursos con fluidez según lo exija la vida en el territorio.",
+      disclaimerBody1: "Al hacer una ofrenda de reciprocidad a este proyecto, entras a un círculo de confianza absoluta. Debido a que estos fondos se transfieren internacionalmente de forma inmediata y se transforman directamente en materiales para el territorio o sustento comunitario, cada ofrenda es definitiva y completamente no reembolsable.",
+      disclaimerBody2: "No vemos a las familias indígenas como contratistas corporativos; honramos y respaldamos su sabiduría ancestral para distribuir estos recursos con la fluidez que la vida y el territorio exijan en cada momento.",
     },
     
     // Language

@@ -1,4 +1,5 @@
 ---
+// This component requires the lang prop to handle translations
 import { t, type Language } from '../i18n/utils';
 import DonorBoxWidget from './DonorBoxWidget.astro';
 
@@ -7,51 +8,151 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+const acceptAgreementLabel =
+  lang === 'es' ? 'Acepto el pacto de confianza' : 'I accept the trust agreement';
+const trustRequiredHint =
+  lang === 'es'
+    ? 'Debes marcar la casilla para continuar.'
+    : 'You must check the box to continue.';
 ---
 
+<!-- MODAL BACKDROP CONTAINER -->
 <div 
-  id="donor-modal"
-  class="fixed inset-0 bg-black/90 flex justify-center items-center z-[2000] p-3 transition-all duration-300 opacity-0 pointer-events-none"
+  id="donation-modal" 
+  class="fixed inset-0 z-50 flex items-center justify-center p-[5%] bg-black/90 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300"
+  role="dialog"
+  aria-modal="true"
 >
-  <div class="bg-tierra-madre border-4 md:border-6 border-padre-sol p-4 sm:p-6 md:p-8 w-full max-w-[640px] max-h-[92vh] relative flex flex-col overflow-hidden shadow-[0_0_30px_rgba(246,0,123,0.4)]">
-    <button 
-      id="close-modal-btn"
-      class="absolute top-1 right-3 sm:top-2 sm:right-4 font-title text-4xl text-sangre-viva hover:text-agua-pura transition-colors cursor-pointer"
-    >
-      &times;
-    </button>
-    <h3 class="font-title text-3xl text-fibra-natural uppercase tracking-wide mb-1">{t(lang, 'modal.title')}</h3>
-    <p class="text-sm text-gray-400 mb-4">{t(lang, 'modal.subtitle')}</p>
+  <!-- MODAL BOX -->
+  <div class="bg-[#111] border border-fibra-natural/20 max-w-xl w-full max-h-[90vh] overflow-y-auto relative flex flex-col shadow-2xl">
     
-    <div class="w-full flex-grow overflow-y-auto overflow-x-hidden bg-white border-2 md:border-3 border-sangre-viva p-0 sm:p-1">
-      <DonorBoxWidget containerClass="w-full" />
+    <!-- CLOSE BUTTON -->
+    <button 
+      data-close-modal
+      class="absolute top-4 right-4 text-fibra-natural/50 hover:text-sangre-viva font-title text-xl cursor-pointer p-2 transition-colors duration-200"
+      aria-label="Close Modal"
+    >
+      ✕
+    </button>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="p-8 md:p-10 space-y-8 flex-1">
+      
+      <!-- HEADER -->
+      <div class="space-y-2 text-center pt-2">
+        <h3 class="font-title text-2xl md:text-3xl text-fibra-natural uppercase tracking-wide">
+          {t(lang, 'modal.title')}
+        </h3>
+        <p class="font-body text-sm md:text-base text-fibra-natural/60 leading-relaxed max-w-sm mx-auto">
+          {t(lang, 'modal.subtitle')}
+        </p>
+      </div>
+
+      <!-- TRUST AGREEMENT GATE -->
+      <div id="trust-gate" class="border-y border-fibra-natural/10 py-6 space-y-4">
+        
+        <!-- Interactive Checkbox Agreement Wrapper -->
+        <label class="flex items-start gap-3 cursor-pointer group select-none">
+          <input 
+            type="checkbox" 
+            id="trust-agreement-checkbox"
+            class="mt-1 accent-sangre-viva h-4 w-4 bg-[#0c0c0c] border border-fibra-natural/30 rounded focus:ring-0 cursor-pointer"
+          />
+          <span class="font-body text-xs md:text-sm text-fibra-natural/80 leading-relaxed group-hover:text-fibra-natural transition-colors duration-200">
+            <strong>{t(lang, 'financial.disclaimerTitle')}:</strong> 
+            {t(lang, 'financial.disclaimerBody1')} 
+            <span class="text-padre-sol font-semibold block mt-1">{t(lang, 'financial.disclaimerBody2')}</span>
+          </span>
+        </label>
+
+        <p class="font-body text-xs text-fibra-natural/50">{trustRequiredHint}</p>
+
+        <button
+          id="accept-trust-agreement"
+          type="button"
+          class="w-full font-title uppercase tracking-wide text-sm bg-sangre-viva/90 text-fibra-natural px-5 py-3 transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:bg-sangre-viva"
+          disabled
+        >
+          {acceptAgreementLabel}
+        </button>
+
+      </div>
+
+      <!-- DONORBOX PORTAL CONTAINER (hidden until trust is accepted) -->
+      <div id="donor-form-container" class="hidden w-full min-h-[350px] bg-[#0c0c0c] border border-fibra-natural/10 items-center justify-center relative">
+        <!-- 
+          INTEGRATION NOTE: Replace this placeholder div with your actual Donorbox embed script or iframe.
+          Example: <iframe src="https://donorbox.org/embed/your-campaign" name="donorbox" ...></iframe>
+        -->
+
+        <DonorBoxWidget />
+
+      </div>
+
     </div>
   </div>
 </div>
 
+<!-- COMPONENT VANILLA JS TOGGLE CONTROL -->
 <script>
-  const modal = document.getElementById('donor-modal');
-  const openBtn = document.getElementById('open-modal-btn');
-  const heroBtn = document.getElementById('hero-donate-btn');
-  const altarBtn = document.getElementById('altar-donate-btn');
-  const closeBtn = document.getElementById('close-modal-btn');
+  const modal = document.getElementById('donation-modal');
+  const openButtons = document.querySelectorAll('[data-open-modal]');
+  const closeButtons = document.querySelectorAll('[data-close-modal]');
+  const checkbox = document.getElementById('trust-agreement-checkbox') as HTMLInputElement;
+  const acceptButton = document.getElementById('accept-trust-agreement') as HTMLButtonElement;
+  const donorFormContainer = document.getElementById('donor-form-container') as HTMLDivElement;
 
-  function openModal() {
-    modal?.classList.remove('opacity-0', 'pointer-events-none');
-    modal?.classList.add('opacity-100', 'pointer-events-auto');
+  checkbox?.addEventListener('change', () => {
+    if (acceptButton) {
+      acceptButton.disabled = !checkbox.checked;
+    }
+  });
+
+  acceptButton?.addEventListener('click', () => {
+    if (!checkbox?.checked || !donorFormContainer) return;
+    donorFormContainer.classList.remove('hidden');
+    donorFormContainer.classList.add('flex');
+    donorFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Open Modal logic
+  openButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.classList.add('overflow-hidden'); // Lock body scroll background
+      }
+    });
+  });
+
+  // Close Modal logic
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      closeModal();
+    });
+  });
+
+  // Close modal when clicking outside the content box boundary
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
   }
 
   function closeModal() {
-    modal?.classList.remove('opacity-100', 'pointer-events-auto');
-    modal?.classList.add('opacity-0', 'pointer-events-none');
+    if (modal) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.classList.remove('overflow-hidden');
+      // Reset gating state when the modal closes.
+      if (checkbox) checkbox.checked = false;
+      if (acceptButton) acceptButton.disabled = true;
+      if (donorFormContainer) {
+        donorFormContainer.classList.add('hidden');
+        donorFormContainer.classList.remove('flex');
+      }
+    }
   }
-
-  openBtn?.addEventListener('click', openModal);
-  heroBtn?.addEventListener('click', openModal);
-  altarBtn?.addEventListener('click', openModal);
-  closeBtn?.addEventListener('click', closeModal);
-
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
 </script>
